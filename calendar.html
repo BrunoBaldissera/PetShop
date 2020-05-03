@@ -7,53 +7,95 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/calendar/calendar.css">
+    <link rel="stylesheet" type="text/css" href="styles/app.css">
+    <link rel="stylesheet" type="text/css" href="styles/calendar/calendar.css">
 
-    <title>Hello, world!</title>
+    <title>Pet Shop Calendar</title>
   </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <div class="container text-center">
-    	<h1>Maio</h1>
-    	<div class="row">
-        	<div class="col-sm">
-          		<h1>D</h1>
-        	</div>
-        	<div class="col-sm">
-          		<h1>S</h1>
-        	</div>
-        	<div class="col-sm">
-          		<h1>T</h1>
-        	</div>
-        	<div class="col-sm">
-          		<h1>Q</h1>
-        	</div>
-        	<div class="col-sm">
-          		<h1>Q</h1>
-        	</div>
-        	<div class="col-sm">
-          		<h1>S</h1>
-        	</div>
-        	<div class="col-sm">
-          		<h1>S</h1>
-        	</div>
-        </div>
+  <body class="color5">
+  	<div class="bodyContent color5 textColor2 pb-5">
+  		<nav class="navbar navbar-expand-md sticky-top">
+  			<div class="container-fluid col-md rounded color1">
+  				<a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left" src="images/homepage_logo.jpeg">
+  					<h1 class="textColor2"> PetShop</h1>
+  				</a>
+  			</div>
+  		</nav>
+	    <div class="container text-center">
+	    	<div class="color3" id="month">
+	    		<h1>Maio</h1>
+	    	</div>
+	    	<table class="table table-borderless color4 textColor2">
+	    		<thead>
+	    			<tr>
+	    				<th scope="col"><h2>D</h2></th>
+	    				<th scope="col"><h2>S</h2></th>
+	    				<th scope="col"><h2>T</h2></th>
+	    				<th scope="col"><h2>Q</h2></th>
+	    				<th scope="col"><h2>Q</h2></th>
+	    				<th scope="col"><h2>S</h2></th>
+	    				<th scope="col"><h2>S</h2></th>
+	    			</tr>
+	    		</thead>
+	    		<tbody>
+	    			<tr>
+	    				<th scope="row"><h4>1</h4></th>
+	    				<td><h4>2</h4></td>
+	    				<td><h4>3</h4></td>
+	    				<td><h4>4</h4></td>
+	    				<td><h4>5</h4></td>
+	    				<td><h4>6</h4></td>
+	    				<td><h4>7</h4></td>
+	    			</tr>
+	    			<tr>
+	    				<th scope="row"><h4>8</h4></th>
+	    				<td><h4>9</h4></td>
+	    				<td><h4>10</h4></td>
+	    				<td><h4>11</h4></td>
+	    				<td><h4>12</h4></td>
+	    				<td><h4>13</h4></td>
+	    				<td><h4>14</h4></td>
+	    			</tr>
+	    			<tr>
+	    				<th scope="row"><h4>15</h4></th>
+	    				<td><h4>16</h4></td>
+	    				<td><h4>17</h4></td>
+	    				<td><h4>18</h4></td>
+	    				<td><h4>19</h4></td>
+	    				<td><h4>20</h4></td>
+	    				<td><h4>21</h4></td>
+	    			</tr>
+	    			<tr>
+	    				<th scope="row"><h4>22</h4></th>
+	    				<td><h4>23</h4></td>
+	    				<td><h4>24</h4></td>
+	    				<td><h4>25</h4></td>
+	    				<td><h4>26</h4></td>
+	    				<td><h4>27</h4></td>
+	    				<td><h4>28</h4></td>
+	    			</tr>
+	    			<tr>
+	    				<th scope="row"><h4>29</h4></th>
+	    				<td><h4>30</h4></td>
+	    				<td><h4>31</h4></td>
+	    			</tr>
+	    		</tbody>
+	    	</table>
+	    </div>
 
-        <script>
-        	var col = document.getElementsByClassName("row")[1];
-        	for(var i = 0; i < 4; i++){
-        		let new_col = document.createElement("span");
-        		for(var j = 0; j < 7; j++){
+	    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	    <div>
+        	<footer class="page-footer color2">
+          		<div class="footer-copyright text-center py-3 sticky-bottom">© PetShop
+          		</div>
+        	</footer>
+    	</div>
 
-        		}
-        	}
-        </script>
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+	    <!-- Optional JavaScript -->
+	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	</div>
+  </body> 
 </html>
