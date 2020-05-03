@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles/app.css">
+    <link rel="stylesheet" type="text/css" href="styles/login/login.css">
 
     <title>Login</title>
   </head>
@@ -24,13 +25,16 @@
       </nav>
 
     <!-- Login -->
-    <div class="container">
-        <div class="text-center">
+    <img src="images/login.jpeg" id="login-image" alt="gato no computador" class="img-thumbnail rounded float-right">
+
+    <div class="container w-70 my-auto" id="login-container">
+        <div class="text-left">
            
-        <div class="card align-items-center">
+        <div class="card align-items-left">
         <article class="card-body">
-        <a href="linkcriarconta" class="btn-outline-primary float-right">Criar Conta</a>
-        <h4 class="card-title text-left">Entrar</h4>
+        <a href="linkcriarconta" class="btn-outline-primary float-center" id="criar-conta">Criar Conta</a>
+        <br>
+        <hr>
 
              <form>
             
@@ -71,7 +75,7 @@
 
     <!-- Footer -->
     <div>
-        <footer class="page-footer color2">
+        <footer class="page-footer color2 fixed-bottom">
           <div class="footer-copyright text-center py-3">© PetShop
           </div>
         </footer>
