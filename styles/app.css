@@ -25,3 +25,8 @@
 .textColor2{
 	color: #464646;
 }
+
+#logo{
+	border-radius: 50%;
+	max-width: 10%;
+}
