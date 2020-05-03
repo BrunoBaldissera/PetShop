@@ -1,0 +1,32 @@
+#logo{
+    max-width: 10%;
+    height: auto;
+}
+
+#products-image{
+    max-width: 10%;
+    margin: 40px;
+    float: left;
+}
+
+#services-image{
+    max-width: 10%;
+    margin: 40px;
+    float:right;
+}
+
+#products-text{
+    padding:90px;
+}
+
+#services-text{
+    padding:90px;
+}
+
+#products{
+    padding:50px;
+}
+
+#services{
+    padding:50px;
+}
