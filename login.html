@@ -11,18 +11,17 @@
 
     <title>Login</title>
   </head>
-  <body>
+  <body class="color5">
+    <!-- NavBar -->
+    <nav id="navbar" class="navbar navbar-expand-md sticky-top">
+      <div class="container-fluid col-md color1">
+        <a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left" src="images/homepage_logo.jpeg">
+          <h1 class="textColor2"> PetShop</h1>
+        </a>
+      </div>
+    </nav>
+
     <h1 class="text-center">Acesse sua conta</h1>
-
-     <!-- NavBar -->
-     <nav class="navbar navbar-expand-md sticky-top">
-        <div class="container-fluid col-md rounded color1">
-          <a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left" src="images/homepage_logo.jpeg">
-            <h1 class="textColor2"> PetShop</h1>
-          </a>
-        </div>
-      </nav>
-
     <!-- Login -->
     <div class="container">
         <div class="text-center">
@@ -70,9 +69,14 @@
 
 
     <!-- Footer -->
-    <div>
-        <footer class="page-footer color2">
-          <div class="footer-copyright text-center py-3">© PetShop
+    <div class="container">
+        <footer class="page-footer">
+          <div class="footer-copyright text-center py-3 fixed-bottom color2">
+            <div class="row" id="footerrow">
+              <div class="col-sm">© PetShop</div>
+              <div class="col-sm"><a href="#">Sobre nós</a></div>
+              <div class="col-sm"><a href="#">Contato</a></div>
+            </div>
           </div>
         </footer>
     </div>
