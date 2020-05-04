@@ -5,30 +5,30 @@
 
 #products-image{
     max-width: 10%;
-    margin: 40px;
+    margin: 20px;
     float: left;
 }
 
 #services-image{
     max-width: 10%;
-    margin: 40px;
+    margin: 20px;
     float:right;
 }
 
 #products-text{
-    padding:90px;
+    padding:10px;
 }
 
 #services-text{
-    padding:90px;
+    padding:10px;
 }
 
 #products{
-    padding:50px;
+    padding:10px;
 }
 
 #services{
-    padding:50px;
+    padding:10px;
 }
 
 #slides{
