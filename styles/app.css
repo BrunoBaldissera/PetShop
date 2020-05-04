@@ -41,6 +41,10 @@
 }
 
 #logo{
+	min-width: 60px;      
+   	width: auto !important; 
+   	width: 60px;         
+	
 	border-radius: 50%;
 	max-width: 8%;
 }
