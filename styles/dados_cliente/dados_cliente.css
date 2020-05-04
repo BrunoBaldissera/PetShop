@@ -3,6 +3,7 @@
     margin: 40px;
     margin-right:10%;
     float: left;
+    border-radius: 50%;
 }
 
 .field{
@@ -21,4 +22,12 @@
 
 #pet-list{
     margin-right: 50px;
+}
+
+#slides{
+    max-width:50%;
+    height:auto;
+    margin: auto;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-bottom: 100px;
 }

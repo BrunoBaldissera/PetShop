@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/app.css">
+    <link rel="stylesheet" type="text/css" href="styles/dados_animal/dados_animal.css">
+
+    <title>Perfil Animal</title>
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- NavBar -->
+    <nav id="navbar" class="navbar navbar-expand-md sticky-top">
+        <div class="container-fluid col-md color1">
+          <a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left img-thumbnail" src="images/homepage_logo.jpeg">
+            <h1 class="textColor2"> PetShop</h1>
+          </a>
+        </div>
+      </nav>
+
+    <div class="container clearfix">
+        <!--Nome-->
+        <h1 class="text-center">Nome Do Pet</h1>
+
+        <!--Owner-->
+        <button type="button" class="btn btn-primary clearfix btn-lg"> Meu dono </button>
+
+        <hr>
+
+        <!--Foto-->
+        <img id="foto-pet" class="img-responsive float-left" src="images/dados_animal_ph.jpeg">
+        
+        <!--ID-->
+        <h5 class="field">ID</h4>
+            <p> Meu ID </p>
+        <!--Race-->
+        <h5 class="field">Raça</h4>
+            <p> Minha raça </p>
+        <!--Idade-->
+        <h5 class="field">Idade</h4>
+            <p> Minha idade </p>
+        
+        <!--Animais-->
+        <div class="card" id="services">
+        <h5 class="field" id="field-services">Serviços Agendados</h5>
+            <ul id="services-list" class="align-content-center">
+                <li class="list-group-item"><a href="pet1">Um</a></li>
+                <li class="list-group-item"><a href="pet2">Monte</a></li>
+                <li class="list-group-item"><a href="pet3">De</a></li>
+                <li class="list-group-item"><a href="pet4">Serviços</a></li>
+                <li class="list-group-item"><a href="pet5">Agendados</a></li>
+            </ul>
+        </div>
+        
+
+    </div>
+    <!-- Footer -->
+    <div class="container">
+        <footer class="page-footer">
+          <div class="footer-copyright text-center py-3 fixed-bottom color2">
+            <div class="row" id="footerrow">
+              <div class="col-sm">© PetShop</div>
+              <div class="col-sm"><a href="#">Sobre nós</a></div>
+              <div class="col-sm"><a href="#">Contato</a></div>
+            </div>
+          </div>
+        </footer>
+      </div>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+#foto-pet{
+    max-width: 30%;
+    margin: 40px;
+    margin-right:10%;
+    float: left;
+}
+
+.field{
+    color: blue;
+    text-align: left;
+}
+
+#services{
+    padding:2%;
+    margin:20px;
+}
+
+#field-services{
+    text-align: center;
+}
+
+#services-list{
+    margin-right: 50px;
+}

@@ -21,9 +21,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-md sticky-top">
-      <div class="container-fluid col-md rounded color1">
-        <a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left" src="images/homepage_logo.jpeg">
+    <nav id="navbar" class="navbar navbar-expand-md sticky-top">
+      <div class="container-fluid col-md color1">
+        <a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left img-thumbnail" src="images/homepage_logo.jpeg">
           <h1 class="textColor2"> PetShop</h1>
         </a>
       </div>
@@ -58,16 +58,68 @@
                 <li class="list-group-item"><a href="pet5">Meus</a></li>
             </ul>
         </div>
+
+    <hr>
+    <h1 class="text-center">Meus pets</h1>
+    <hr>
+
+    <!--CAROUSEL-->
+    <div id="slides" class="carousel slide row-md-4 clearfix" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#slides" data-slide-to="0" class="active"></li>
+        <li data-target="#slides" data-slide-to="1"></li>
+        <li data-target="#slides" data-slide-to="2"></li>
+      </ul>
+
+      <div class="carousel-inner">
+
+        <!--Pet 1-->
+        <div class="carousel-item active">
+          <img src="images/homepage_crop_logo.jpeg" class="container-fluid">
+          <div class="carousel-caption">
+            <h3>Nome do pet</h3>
+            <button type="button" class="btn btn-primary  btn-lg"> Perfil do pet </button>
+          </div>
+        </div>
+
+        <!--Pet 2-->
+        <div class="carousel-item">
+          <img src="images/homepage_crop_products.jpeg" class="container-fluid">
+          <div class="carousel-caption">
+            <h3>Nome do pet</h3>
+            <button type="button" class="btn btn-primary  btn-lg"> Perfil do pet </button>
+          </div>
+        </div>
+
+        <!--Pet 3-->
+        <div class="carousel-item">
+          <img src="images/homepage_crop_servicos.jpeg" class="container-fluid">
+          <div class="carousel-caption">
+            <h3>Nome do pet</h3>
+            <button type="button" class="btn btn-primary  btn-lg"> Perfil do pet </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr>
         
 
     </div>
     <!-- Footer -->
-    <div>
-        <footer class="page-footer color2 fixed-bottom">
-          <div class="footer-copyright text-center py-3">© PetShop
+    <div class="container">
+      <footer class="page-footer">
+        <div class="footer-copyright text-center py-3 fixed-bottom color2">
+          <div class="row" id="footerrow">
+            <div class="col-sm">© PetShop</div>
+            <div class="col-sm"><a href="#">Sobre nós</a></div>
+            <div class="col-sm"><a href="#">Contato</a></div>
           </div>
-        </footer>
+        </div>
+      </footer>
     </div>
+
 
   </body>
 </html>
