@@ -1,4 +1,11 @@
-#logo{
-	border-radius: 50%;
-	max-width: 10%;
+#navbar > a:hover {
+	background-color: #74be97;
+}
+
+tbody th:hover{
+	background-color: #96cfb1;
+}
+
+td:hover{
+	background-color: #96cfb1;
 }

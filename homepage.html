@@ -9,18 +9,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="styles/app.css">
     <link rel="stylesheet" type="text/css" href="styles/homepage/homepage.css">
+    <link rel="stylesheet" type="text/css" href="styles/app.css">
 
     <title>Homepage</title>
   </head>
 
-  <body>
-
+  <body class="color5">
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-md sticky-top">
-      <div class="container-fluid col-md rounded color1">
-        <a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left" src="images/homepage_logo.jpeg">
+    <nav id="navbar" class="navbar navbar-expand-md sticky-top">
+      <div class="container-fluid col-md color1">
+        <a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left img-thumbnail" src="images/homepage_logo.jpeg">
           <h1 class="textColor2"> PetShop</h1>
         </a>
       </div>
@@ -28,7 +27,7 @@
 
     <!--DIV DE NOME E LOGO-->
     <div class="text-center" id="name-logo">
-      <h1 id="name" class="display-1 "">PetShop</h1>
+      <h1 id="name" class="display-1">Petshop</h1>
       <img src="images/homepage_logo.jpeg" id="logo" alt="logo pet shop" class="img-thumbnail rounded-circle">
     </div>
 
@@ -74,6 +73,19 @@
     </div>
 
     <hr>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="page-footer">
+          <div class="footer-copyright text-center py-3 fixed-bottom color2">
+            <div class="row" id="footerrow">
+              <div class="col-sm">© PetShop</div>
+              <div class="col-sm"><a href="#">Sobre nós</a></div>
+              <div class="col-sm"><a href="#">Contato</a></div>
+            </div>
+          </div>
+        </footer>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

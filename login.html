@@ -12,16 +12,15 @@
 
     <title>Login</title>
   </head>
-  <body>
-
+  <body class="color5">
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-md sticky-top">
-        <div class="container-fluid col-md rounded color1">
-          <a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left" src="images/homepage_logo.jpeg">
-            <h1 class="textColor2"> PetShop</h1>
-          </a>
-        </div>
-      </nav>
+    <nav id="navbar" class="navbar navbar-expand-md sticky-top">
+      <div class="container-fluid col-md color1">
+        <a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left img-thumbnail" src="images/homepage_logo.jpeg">
+          <h1 class="textColor2"> PetShop</h1>
+        </a>
+      </div>
+    </nav> 
 
     <h1 class="text-center">Acesse sua conta</h1>
     <hr>
@@ -30,42 +29,49 @@
     <img src="images/login.jpeg" id="login-image" alt="gato no computador" class="img-thumbnail rounded float-right">
 
     <div class="container w-70 my-auto" id="login-container">
-        <div class="text-left">
-           
-        <div class="card align-items-left">
-        <article class="card-body">
-        <a href="linkcriarconta" class="btn-outline-primary float-center" id="criar-conta">Criar Conta</a>
-        <br>
-        <hr>
+        <div class="text-left">   
+            <div class="card align-items-left">
+                <article class="card-body">
+                    <a href="linkcriarconta" class="btn-outline-primary float-center" id="criar-conta">Criar Conta</a>
+                    <br>
+                    <hr>
+                    <form>
+                        <div class="checkbox">
+                            <label> <input type="checkbox"> Sou um administrador </label>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label>Login</label>
+                            <input name="" class="form-control" placeholder="Digite seu e-mail" type="email">
+                        </div>
 
-             <form>
-            
-            <div class="checkbox">
-                <label> <input type="checkbox"> Sou um administrador </label>
+                        <div class="form-group">
+                            <label>Senha</label>
+                            <input class="form-control" placeholder="****" type="password">
+                        </div>
+         
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+                        </div>                                                         
+                    </form>
+                </article>
             </div>
-            <br>
-            <div class="form-group">
-                <label>Login</label>
-                <input name="" class="form-control" placeholder="Digite seu e-mail" type="email">
-            </div>
-
-            <div class="form-group">
-                <label>Senha</label>
-                <input class="form-control" placeholder="****" type="password">
-            </div>
-
-            <div class="form-group"> 
-            
-            </div> 
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block"> Login  </button>
-            </div>                                                         
-        </form>
-        </article>
+        <aside class="col-sm-4">
+        </aside>
         </div>
-        
-            </aside>
-            <aside class="col-sm-4">
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="page-footer">
+        <div class="footer-copyright text-center py-3 fixed-bottom color2">
+          <div class="row" id="footerrow">
+            <div class="col-sm">© PetShop</div>
+            <div class="col-sm"><a href="#">Sobre nós</a></div>
+            <div class="col-sm"><a href="#">Contato</a></div>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <!-- Optional JavaScript -->
@@ -73,15 +79,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-
-    <!-- Footer -->
-    <div>
-        <footer class="page-footer color2 fixed-bottom">
-          <div class="footer-copyright text-center py-3">© PetShop
-          </div>
-        </footer>
-    </div>
-
   </body>
 </html>
