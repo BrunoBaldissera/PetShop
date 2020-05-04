@@ -1,0 +1,25 @@
+.field{
+    color: blue;
+    text-align: left;
+}
+
+#pets{
+    padding:2%;
+    margin:20px;
+}
+
+#field-pets{
+    text-align: center;
+}
+
+#pet-list{
+    margin-right: 50px;
+}
+
+#slides{
+    max-width:50%;
+    margin: 20px;
+}
+
+.carousel { overflow: hidden; }
+.carousel-item { overflow: hidden; }
