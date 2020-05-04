@@ -26,7 +26,27 @@
 	color: #464646;
 }
 
+.textColor3 {
+	color: #8e3e45;
+}
+
+.navbar {
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
 #logo{
 	border-radius: 50%;
-	max-width: 10%;
+	max-width: 8%;
+}
+
+#footerrow{
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+#footerrow a{
+	text-decoration: none;
+	color: #131313;
 }

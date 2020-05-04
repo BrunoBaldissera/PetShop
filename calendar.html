@@ -14,8 +14,8 @@
   </head>
   <body class="color5">
   	<div class="bodyContent color5 textColor2 pb-5">
-  		<nav class="navbar navbar-expand-md sticky-top">
-  			<div class="container-fluid col-md rounded color1">
+  		<nav id="navbar" class="navbar navbar-expand-md sticky-top">
+  			<div class="container-fluid col-md color1">
   				<a class="navbar-brand" href="#"><img id="logo" class="img-responsive float-left" src="images/homepage_logo.jpeg">
   					<h1 class="textColor2"> PetShop</h1>
   				</a>
@@ -28,7 +28,7 @@
 	    	<table class="table table-borderless color4 textColor2">
 	    		<thead>
 	    			<tr>
-	    				<th scope="col"><h2>D</h2></th>
+	    				<th scope="col" class="textColor3"><h2>D</h2></th>
 	    				<th scope="col"><h2>S</h2></th>
 	    				<th scope="col"><h2>T</h2></th>
 	    				<th scope="col"><h2>Q</h2></th>
@@ -39,7 +39,7 @@
 	    		</thead>
 	    		<tbody>
 	    			<tr>
-	    				<th scope="row"><h4>1</h4></th>
+	    				<th class="textColor3" scope="row"><h4>1</h4></th>
 	    				<td><h4>2</h4></td>
 	    				<td><h4>3</h4></td>
 	    				<td><h4>4</h4></td>
@@ -48,7 +48,7 @@
 	    				<td><h4>7</h4></td>
 	    			</tr>
 	    			<tr>
-	    				<th scope="row"><h4>8</h4></th>
+	    				<th class="textColor3" scope="row"><h4>8</h4></th>
 	    				<td><h4>9</h4></td>
 	    				<td><h4>10</h4></td>
 	    				<td><h4>11</h4></td>
@@ -57,7 +57,7 @@
 	    				<td><h4>14</h4></td>
 	    			</tr>
 	    			<tr>
-	    				<th scope="row"><h4>15</h4></th>
+	    				<th class="textColor3" scope="row"><h4>15</h4></th>
 	    				<td><h4>16</h4></td>
 	    				<td><h4>17</h4></td>
 	    				<td><h4>18</h4></td>
@@ -66,7 +66,7 @@
 	    				<td><h4>21</h4></td>
 	    			</tr>
 	    			<tr>
-	    				<th scope="row"><h4>22</h4></th>
+	    				<th class="textColor3" scope="row"><h4>22</h4></th>
 	    				<td><h4>23</h4></td>
 	    				<td><h4>24</h4></td>
 	    				<td><h4>25</h4></td>
@@ -75,7 +75,7 @@
 	    				<td><h4>28</h4></td>
 	    			</tr>
 	    			<tr>
-	    				<th scope="row"><h4>29</h4></th>
+	    				<th class="textColor3" scope="row"><h4>29</h4></th>
 	    				<td><h4>30</h4></td>
 	    				<td><h4>31</h4></td>
 	    			</tr>
@@ -84,9 +84,15 @@
 	    </div>
 
 	    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	    <div>
-        	<footer class="page-footer color2">
-          		<div class="footer-copyright text-center py-3 sticky-bottom">© PetShop
+	    
+	    <div class="container">
+        	<footer class="page-footer">
+          		<div class="footer-copyright text-center py-3 fixed-bottom color2">
+            		<div class="row" id="footerrow">
+              			<div class="col-sm">© PetShop</div>
+              			<div class="col-sm"><a href="#">Sobre nós</a></div>
+              			<div class="col-sm"><a href="#">Contato</a></div>
+            		</div>
           		</div>
         	</footer>
     	</div>
