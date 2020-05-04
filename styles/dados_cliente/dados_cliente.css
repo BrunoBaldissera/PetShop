@@ -1,0 +1,24 @@
+#foto-cliente{
+    max-width: 30%;
+    margin: 40px;
+    margin-right:10%;
+    float: left;
+}
+
+.field{
+    color: blue;
+    text-align: left;
+}
+
+#pets{
+    padding:2%;
+    margin:20px;
+}
+
+#field-pets{
+    text-align: center;
+}
+
+#pet-list{
+    margin-right: 50px;
+}
