@@ -1,7 +1,7 @@
 #foto-cliente{
     max-width: 30%;
     margin: 40px;
-    margin-right:20%;
+    margin-right:10%;
     float: left;
 }
 
@@ -17,4 +17,8 @@
 
 #field-pets{
     text-align: center;
+}
+
+#pet-list{
+    margin-right: 50px;
 }
