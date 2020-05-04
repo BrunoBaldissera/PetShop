@@ -17,10 +17,12 @@
 
 #products-text{
     padding:10px;
+    margin:10px;
 }
 
 #services-text{
     padding:10px;
+    margin:10px;
 }
 
 #products{
@@ -36,4 +38,9 @@
     height:auto;
     margin: auto;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-bottom: 10px;
+}
+
+#admin-checkbox{
+    margin:30px;
 }
