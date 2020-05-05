@@ -1,0 +1,39 @@
+Petshop Mockup
+
+Bruno Baldissera
+Bruno Gazoni 7585037
+Rafael Ceneme
+
+Páginas modeladas:
+(arquivos html e css com mesmo nome)
+
+=====
+
+homepage - Página inicial do site
+
+acoes_admin - Ações de administrador
+user_actions - Ações de usuário comum
+
+dados_admin - Perfil de administrador
+dados_animal - Perfil de pet
+dados_cliente - Perfil de usuário comum
+dados_produto - Informações sobre um produto
+
+reg_prod - Página para admin registrar um novo produto
+reg_serv - Página para admin registrar um novo serviço
+
+lista_produtos - Lista de todos os produtos
+lista_servicos - Lista de todos os serviços
+
+calendar - Calendário interativo com serviços disponíveis para cada dia
+
+=====
+
+app.css: CSS com configurações de aparência básicas para todas as páginas
+
+=====
+
+Pastas:
+
+images - imagens usadas como placeholders nas páginas
+styles - grupo de todas as pastas que contem css para cada html
