@@ -2,3 +2,8 @@
     width: 15%;
     float: right;
 }
+
+.container{
+    width: 50%;
+    margin: auto;
+}
