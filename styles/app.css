@@ -1,9 +1,10 @@
-.body {
+.body, h1, h2, h3, p {
 	min-width: 320px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif!important; 
 }
 
 #petshop-name {
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	font-family: 'Lemon';
 }
 
 .color1 {
