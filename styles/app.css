@@ -1,3 +1,11 @@
+.body {
+	min-width: 320px;
+}
+
+#petshop-name {
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
 .color1 {
 	background-color: #53ac7e;
 }
@@ -31,9 +39,7 @@
 }
 
 #navbar{
-	padding-top: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
+	padding: 0px;
 }
 
 .btn {
@@ -51,7 +57,7 @@
    	width: 60px;         
 
 	border-radius: 50%;
-	max-width: 8%;
+	max-width: 5.5%;
 }
 
 #footerrow{

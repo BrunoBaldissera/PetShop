@@ -2,10 +2,37 @@
 	background-color: #74be97;
 }
 
+#calendarContainer {
+	margin-left: 1%;
+	height: 100%;
+}
+
+#arrow{
+	width: 54px;
+	height: 54px;
+	padding: 2px;
+}
+
 tbody th:hover{
 	background-color: #96cfb1;
 }
 
 td:hover{
 	background-color: #96cfb1;
+}
+
+#navbar{
+	padding: 0px;
+}
+
+.jumbotron {
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+
+.delim {
+	width: 200px;
+    height: 3px;
+    background: #464646;
+    margin: 20px auto;
 }

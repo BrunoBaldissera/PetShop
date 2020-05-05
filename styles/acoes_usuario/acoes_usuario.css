@@ -9,8 +9,13 @@
     background: #464646;
     margin: 20px auto;
 }
+	
+#navbar {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
 
-.btn {
-	border-style: none;
-	background-color: #74be97;  
+.jumbotron {
+	padding-top: 15px;
+	padding-bottom: 20px;
 }

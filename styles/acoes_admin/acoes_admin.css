@@ -9,3 +9,14 @@
     background: #464646;
     margin: 20px auto;
 }
+
+#navbar {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+
+.jumbotron {
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
