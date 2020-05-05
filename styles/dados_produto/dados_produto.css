@@ -11,6 +11,10 @@
 #container-products{
     margin-bottom:80px;
 }
+.jumbotron {
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
 
 .carousel { overflow: hidden; }
 .carousel-item { overflow: hidden; }

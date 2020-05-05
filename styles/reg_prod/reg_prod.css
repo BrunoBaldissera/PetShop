@@ -9,3 +9,11 @@
     border-radius: 5%;
     margin-left: 50px;
 }
+
+#stock{
+    width: 90px;
+}
+
+#price{
+    width: 90px;
+}
