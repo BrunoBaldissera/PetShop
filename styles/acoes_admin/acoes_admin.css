@@ -1,0 +1,11 @@
+.row-cards{
+	margin: auto;
+	width: 65%;
+}
+
+.delim {
+	width: 200px;
+    height: 3px;
+    background: #464646;
+    margin: 20px auto;
+}

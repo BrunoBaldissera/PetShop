@@ -36,6 +36,11 @@
 	padding-right: 0px;
 }
 
+.btn {
+	border-style: none;
+	background-color: #74be97;  
+}
+
 #navbar > div {
 	background-color: rgba(83, 172, 126, 0.95);
 }
@@ -44,7 +49,7 @@
 	min-width: 60px;      
    	width: auto !important; 
    	width: 60px;         
-	
+
 	border-radius: 50%;
 	max-width: 8%;
 }
