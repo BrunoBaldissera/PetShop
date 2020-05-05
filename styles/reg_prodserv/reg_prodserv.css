@@ -1,0 +1,11 @@
+.container{
+    width: 30%;
+    margin: auto;
+}
+
+#foto-admin{
+    max-width: 20%;
+    margin: 10px;
+    border-radius: 5%;
+    margin-left: 50px;
+}
