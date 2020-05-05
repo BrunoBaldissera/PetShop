@@ -1,0 +1,15 @@
+.row-cards{
+	margin: auto;
+	width: 65%;
+}
+
+#navbar {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+
+.jumbotron {
+	padding-top: 15px;
+	padding-bottom: 20px;
+}

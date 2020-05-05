@@ -2,15 +2,13 @@
 	margin: auto;
 	width: 65%;
 }
-
-.delim {
-	width: 200px;
-    height: 3px;
-    background: #464646;
-    margin: 20px auto;
+	
+#navbar {
+	padding-bottom: 0;
+	margin-bottom: 0;
 }
 
-.btn {
-	border-style: none;
-	background-color: #96cfb1;
+.jumbotron {
+	padding-top: 15px;
+	padding-bottom: 20px;
 }

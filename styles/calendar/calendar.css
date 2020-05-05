@@ -2,10 +2,55 @@
 	background-color: #74be97;
 }
 
+#calendarContainer {
+	margin-left: 1%;
+	height: 100%;
+}
+
+#arrow{
+	width: 54px;
+	height: 54px;
+	padding: 2px;
+}
+
 tbody th:hover{
 	background-color: #96cfb1;
 }
 
 td:hover{
 	background-color: #96cfb1;
+}
+
+a {
+	color: inherit;
+	text-decoration: none !important;
+}
+
+a:hover {
+	color: #131313;
+}
+
+.jumbotron {
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+
+#horariosTexto {
+	margin-left: 200px;
+}
+
+.list-group > li:hover {
+	background-color: #FFDB86;
+}
+
+.time-occupied {
+	background-color: #FFB665;
+}
+
+.time-occupied:hover {
+	background-color: #F39D32;
+}
+
+.li {
+	display: inline;
 }
