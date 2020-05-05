@@ -21,8 +21,13 @@ td:hover{
 	background-color: #96cfb1;
 }
 
-#navbar{
-	padding: 0px;
+a {
+	color: inherit;
+	text-decoration: none !important;
+}
+
+a:hover {
+	color: #131313;
 }
 
 .jumbotron {
@@ -30,9 +35,22 @@ td:hover{
 	padding-bottom: 20px;
 }
 
-.delim {
-	width: 200px;
-    height: 3px;
-    background: #464646;
-    margin: 20px auto;
+#horariosTexto {
+	margin-left: 200px;
+}
+
+.list-group > li:hover {
+	background-color: #FFDB86;
+}
+
+.time-occupied {
+	background-color: #FFB665;
+}
+
+.time-occupied:hover {
+	background-color: #F39D32;
+}
+
+.li {
+	display: inline;
 }
