@@ -3,11 +3,16 @@
 }
 
 #calendarContainer {
-	margin-left: 1%;
+	margin-left: 5%;
+	margin-right: 0;
+	padding-right: 0;
+	width: 95%;
 	height: 100%;
 }
 
 #arrow{
+	margin-left: 20px;
+
 	width: 54px;
 	height: 54px;
 	padding: 2px;
