@@ -26,6 +26,7 @@ lista_produtos - Lista de todos os produtos
 lista_servicos - Lista de todos os serviços
 
 calendar - Calendário interativo com serviços disponíveis para cada dia
+template - Template para criação de novas páginas com navbar e footer
 
 =====
 
