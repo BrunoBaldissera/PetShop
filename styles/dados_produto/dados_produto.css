@@ -3,22 +3,13 @@
     text-align: left;
 }
 
-#pets{
-    padding:2%;
-    margin:20px;
-}
-
-#field-pets{
-    text-align: center;
-}
-
-#pet-list{
-    margin-right: 50px;
-}
-
 #slides{
     max-width:50%;
     margin: 20px;
+}
+
+#container-products{
+    margin-bottom:80px;
 }
 
 .carousel { overflow: hidden; }
