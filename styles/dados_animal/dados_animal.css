@@ -3,7 +3,7 @@
     margin: 40px;
     margin-right:10%;
     float: left;
-    border-radius: 50%;
+    border-radius: 5%;
 }
 
 .field{
@@ -26,4 +26,9 @@
 
 #price{
     margin-bottom: 30px;
+}
+
+.jumbotron {
+    padding-top: 15px;
+    padding-bottom: 20px;
 }

@@ -1,0 +1,22 @@
+.container{
+    width: 30%;
+    margin: auto;
+}
+
+#foto-admin{
+    max-width: 20%;
+    margin: 10px;
+    border-radius: 5%;
+    margin-left: 50px;
+}
+
+<<<<<<< HEAD:styles/reg_prodserv/reg_prodserv.css
+.jumbotron {
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+=======
+#idhorario{
+    width: 82px;
+}
+>>>>>>> 2002c36e68cc3de766470139e13f962d768d0b72:styles/reg_serv/reg_serv.css

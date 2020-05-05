@@ -21,5 +21,10 @@
     margin: 20px;
 }
 
+.jumbotron {
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+
 .carousel { overflow: hidden; }
 .carousel-item { overflow: hidden; }
