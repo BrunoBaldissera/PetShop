@@ -8,6 +8,10 @@
     margin: auto;
 }
 
+#quadro{
+    padding-left: 20%;
+}
+
 #foto-admin{
     max-width: 17%;
     margin: 10px;
