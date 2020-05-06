@@ -1,8 +1,8 @@
 Petshop Mockup
 
-Bruno Baldissera
+Bruno Baldissera 10724351
 Bruno Gazoni 7585037
-Rafael Ceneme
+Rafael Ceneme 9898610
 
 Páginas modeladas:
 (arquivos html e css com mesmo nome)
