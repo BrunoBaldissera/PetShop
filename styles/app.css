@@ -3,7 +3,7 @@
     Bruno Baldissera  10724351
     Rafael Ceneme     9898610
 */
-.body, h1, h2, h3, p {
+.body, h1, h3, p{
 	min-width: 320px;
 	font-family: "Trebuchet MS", Helvetica, sans-serif!important; 
 }
