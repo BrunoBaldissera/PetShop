@@ -38,3 +38,14 @@ var clientSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('client', clientSchema);
+
+
+//{
+//   "id": "12325453",
+//   "nome": "Ceneman Gazoni",
+//   "endereco": "Sao carlos rua lalala numero 32124",
+//   "telefone": "32323232",
+//   "email": "e@ma.il",
+//   "perfil_path": "/bin/src/perfil/blablalb",
+//   "array_pets": ["dogaum", "doguinho"]
+//}
