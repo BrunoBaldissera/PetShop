@@ -3,9 +3,13 @@
     Bruno Baldissera  10724351
     Rafael Ceneme     9898610
 */
-.product-image{
+.card-img-top{
     width: 50%;
     float: top;
+    padding: 10px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container{
@@ -16,4 +20,14 @@
 .card-image-top{
     padding-top: calc(var(--jumbotron-padding-y) * 2);
     padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+}
+
+.card{
+    padding: 10px;
+    margin: 10px;
+}
+
+.btn{
+    margin: 2px;
+    padding: 2px;
 }
