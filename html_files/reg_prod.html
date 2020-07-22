@@ -1,0 +1,111 @@
+<!--
+    Bruno Gazoni      7585037
+    Bruno Baldissera  10724351
+    Rafael Ceneme     9898610
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href='https://fonts.googleapis.com/css?family=Lemon' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="styles/app.css">
+    <link rel="stylesheet" type="text/css" href="styles/reg_prod/reg_prod.css">
+
+    <title>Registrar novo produto</title>
+</head>
+
+<body class="color5">
+
+    <!-- NavBar -->
+	<nav id="navbar" class="navbar navbar-dark navbar-expand-md sticky-top">
+	    <div class="container-fluid color1">
+	        <a class="navbar-brand col-4" href="#"><img id="logo" class="img-responsive float-left img-thumbnail media" src="images/homepage_logo.jpeg">
+	          <h4 id="petshop-name" class="textColor2 pl-5">PetShop</h4>
+	        </a>
+	        <button class="navbar-toggler float-right col-4 mr-3" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+	          <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div id="navbarResponsive" class="collapse navbar-collapse col-7 justify-content-center">
+	          <ul class="navbar-nav">
+	            <li class="nav-item col-9">
+	              <div class="input-group">
+	                <span class="input-group-append">
+	                  <button class="btn" type="button">
+	                    <i class="fa fa-search"></i>
+	                  </button>
+	                </span>
+	                <input class="form-control py-2 border-right-0 border" type="search" placeholder="Buscar no site">
+	              </div>
+	            </li>
+	            <li class="nav-item ml-3"><a class="nav-link" href="#">Serviços</a></li>
+	            <li class="nav-item ml-3"><a class="nav-link" href="#">Produtos</a></li>
+	            <li class="nav-item ml-3"><a class="nav-link" href="#">Calendário</a></li>
+	            <li class="nav-item ml-3"><a class="nav-link" href="#">Conta</a></li>
+	          </ul>
+	        </div>  
+	    </div>
+	</nav>
+
+    <h1 class="text-center">Registrar um novo produto</h1>
+    <hr>
+
+    <div id="quadro" class="container-fluid">
+        <img id="foto-admin" class="float-left" src="images/dados_servico_ph.jpeg">
+
+        <!-- Registration Form -->
+        <div class="container" id="forms">
+            <form>
+                <div class="form-group">
+                    <label for="textAreaName">Nome</label>
+                    <input class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="textAreaDesc">Descrição</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="textAreaPrice">Preço</label>
+                    <input class="form-control" id="price" placeholder="$$$">
+                </div>
+                <div class="form-group">
+                    <label for="textAreaStock">Quantidade em estoque</label>
+                    <input class="form-control" id="stock">
+                </div>
+                <button type="button" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <div class="footer-copyright text-center container-fluid py-3 color2">
+        <div class="row" id="footerrow">
+          <div class="col-sm mt-1">© PetShop</div>
+          <div class="col-sm"><a href="#"><i class="fab fa-instagram fa-2x"></i></a></div>
+          <div class="col-sm"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></div>
+        </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "petshop",
+  "version": "1.0.0",
+  "description": "A fully implemented simple petshop web application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoBaldissera/PetShop.git"
+  },
+  "keywords": [
+    "api",
+    "restful"
+  ],
+  "author": "Bruno Baldissera Carlotto, Bruno Gazoni and Rafael Ceneme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunoBaldissera/PetShop/issues"
+  },
+  "homepage": "https://github.com/BrunoBaldissera/PetShop#readme"
+}
