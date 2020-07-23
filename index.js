@@ -1,6 +1,8 @@
 var express = require("express");
 var mongoose = require("mongoose");
-//var routes = require("./routes/routes");
+var routes = require("./routes/routes");
+
+app.use('/api', apiRoutes);
 
 var app = express();
 

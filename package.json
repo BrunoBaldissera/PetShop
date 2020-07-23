@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/BrunoBaldissera/PetShop#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "mongoose": "^5.9.25",
     "run": "^1.4.0"
