@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/BrunoBaldissera/PetShop/issues"
   },
-  "homepage": "https://github.com/BrunoBaldissera/PetShop#readme"
+  "homepage": "https://github.com/BrunoBaldissera/PetShop#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.25",
+    "run": "^1.4.0"
+  }
 }
