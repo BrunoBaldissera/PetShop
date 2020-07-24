@@ -26,11 +26,11 @@ exports.index = function (req, res) {
 const debug = exports.new = function (req, res) {
     let admin = new Admin();
 
-    admin.nome = "jose";
-    admin.id = "502";
-    admin.telefone = "32323232";
-    admin.email = "charas@email";
-    admin.perfil_path = "a";
+    admin.nome = req.body.nome;
+    admin.id = req.body.id;
+    admin.telefone = req.body.telefone;
+    admin.email = req.body.email;
+    admin.perfil_path = req.body.perfil_path;
 
     // salva o admin, check por errors
     admin.save(function (err, data) {
@@ -82,7 +82,7 @@ exports.update = function (req, res) {
     });
 };*/
 
-/* Handle delete admin
+//Handle delete admin
 exports.delete = function (req, res) {
     let admin = new Admin();
     Admin.remove({
@@ -95,4 +95,4 @@ exports.delete = function (req, res) {
             message: 'Admin deleted'
         });
     });
-};*/
+};
