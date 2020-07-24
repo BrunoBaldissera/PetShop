@@ -10,17 +10,20 @@ router.get('/', function (req, res) {
     });
 });
 
-
 //ACOESADMIN
     //importar acoesAdmin controller
     var acoesAdminController = require('../controllers/acoesAdminController/acoesAdminController.js');
     //admin routes
+    // Contact routes
+    router.route('/admins')
+        .get(acoesAdminController.index);
+        //.post(acoesAdminController.new);
+
     router.route('/admins/:admin_id')
         .get(acoesAdminController.view);
-        .patch(acoesAdminController.update);
-        .put(acoesAdminController.update);
-        .delete(acoesAdminController.delete);
+        //.patch(acoesAdminController.update)
+        //.put(acoesAdminController.update)
+        //.delete(acoesAdminController.delete)
 
-
-        // exportamos as rotas da api
+// exportamos as rotas da api
 module.exports = router;

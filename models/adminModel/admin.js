@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
-
-var adminSchema = mongoose.Schema({
-    
+var adminSchema = new mongoose.Schema({
+   
     id: {
         type: String,
         required: true
@@ -29,7 +28,7 @@ var adminSchema = mongoose.Schema({
 
 });
 
-var Admin = module.exports = mongoose.model('admin', adminSchema);
+module.exports = Admin = mongoose.model('Admin', adminSchema);
 
 module.exports.get = function (callback, limit){
     Admin.find(callback).limit(limit);

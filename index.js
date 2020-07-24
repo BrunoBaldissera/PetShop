@@ -9,7 +9,6 @@ var app = express();
 app.use(bodyParser.urlencoded({
    extended: true
 }));
-
 app.use(bodyParser.json());
 
 const db_conn = "mongodb+srv://bbaldissera:1234@cluster0.tcafq.gcp.mongodb.net/test";
@@ -17,13 +16,17 @@ mongoose.connect(db_conn, {
     useNewUrlParser: true,
 });
 var db = mongoose.connection;
+// Added check for DB connection
+if(!db)
+    console.log("Error connecting db")
+else
+    console.log("Db connected successfully")
 
 var port = process.env.PORT || 8080;
 
- app.get('/', function (req, res) {
-   res.json('Hello World!!!');
- });
-//routes(app);
+app.get('/', function (req, res) {
+  res.json('Hello World!!!');
+});
 
 app.use('/api', routes);
 
