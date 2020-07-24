@@ -13,7 +13,7 @@ exports.index = function (req, res) {
             });
         }
 
-        else res.json({
+        res.json({
             status: "success",
             message: "Admins retrieved successfully",
             data: admins
@@ -42,9 +42,8 @@ exports.new = function (req, res) {
     });
 };*/
 
-/* Handle view admin info
+//Handle view admin info
 exports.view = function (req, res) {
-    let admin = new Admin();
     Admin.findById(req.params.admin_id, function (err, admin) {
         if (err)
             res.send(err);
@@ -53,7 +52,7 @@ exports.view = function (req, res) {
             data: admin
         });
     });
-};*/
+};
 
 /* Handle update admin info
 exports.update = function (req, res) {
