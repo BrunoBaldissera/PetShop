@@ -1,12 +1,26 @@
 //routes.js
 // inicializamos o router do express
 let router = require('express').Router();
+
 // configuramos uma resposta padrão de requisições
 router.get('/', function (req, res) {
     res.json({
         status: 'API Its Working',
-        message: 'Welcome to RESTHub crafted with love!'
+        message: 'Welcome to PETSHOP crafted with love!'
     });
 });
-// exportamos as rotas da api
+
+
+//ACOESADMIN
+    //importar acoesAdmin controller
+    var acoesAdminController = require('../controllers/acoesAdminController/acoesAdminController.js');
+    //admin routes
+    router.route('/admins/:admin_id')
+        .get(acoesAdminController.view);
+        .patch(acoesAdminController.update);
+        .put(acoesAdminController.update);
+        .delete(acoesAdminController.delete);
+
+
+        // exportamos as rotas da api
 module.exports = router;
