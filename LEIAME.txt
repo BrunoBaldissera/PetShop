@@ -1,3 +1,14 @@
+fazer o .gitignore
+
+mongoose
+npm install mongoose --save
+body-parser
+npm install body-parser --save
+
+express
+npm install express --save
+
+
 Petshop Mockup
 
 Bruno Baldissera 10724351
