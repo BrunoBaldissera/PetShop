@@ -1,4 +1,4 @@
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 
 var adminSchema = mongoose.Schema({
     
@@ -29,4 +29,8 @@ var adminSchema = mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('admin', adminSchema);
+var Admin = module.exports = mongoose.model('admin', adminSchema);
+
+module.exports.get = function (callback, limit){
+    Admin.find(callback).limit(limit);
+}
