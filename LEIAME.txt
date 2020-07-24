@@ -1,9 +1,10 @@
 fazer o .gitignore
 
-mongoose
+npm install express --save
 npm install mongoose --save
-body-parser
 npm install body-parser --save
+npm install axios
+npm install vue bootstrap-vue bootstrap
 
 express
 npm install express --save

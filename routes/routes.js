@@ -16,8 +16,8 @@ router.get('/', function (req, res) {
     //admin routes
     // Contact routes
     router.route('/admins')
-        .get(acoesAdminController.index);
-        //.get(acoesAdminController.new);
+        .get(acoesAdminController.index)
+        .post(acoesAdminController.new);
 
     router.route('/admins/:admin_id')
         .get(acoesAdminController.view);

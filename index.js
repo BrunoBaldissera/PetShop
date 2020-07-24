@@ -1,7 +1,9 @@
 var express = require("express");
 var app = express();
+const path = require('path');
 var mongoose = require("mongoose");
 let bodyParser = require('body-parser');
+
 var Admin = require("./models/adminModel/admin")
 
 // Configura o body-parser para lidar rquisições de post
@@ -24,8 +26,10 @@ else
 
 var port = process.env.PORT || 8080;
 
+app.use(express.static(path.join(__dirname + '/public')));
+
 app.get('/', function (req, res) {
-  res.json('Hello World!!!');
+  res.sendFile(path.join(__dirname+'/index.html'));
 });
 
 var routes = require("./routes/routes");
