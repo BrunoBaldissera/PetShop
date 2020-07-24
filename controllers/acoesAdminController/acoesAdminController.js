@@ -1,18 +1,19 @@
 var mongoose = require('mongoose');
 
 // Importa admin model
-var Admin = require('../../models/adminModel/admin.js');
+//var Admin = require('../../models/adminModel/admin');
+var Admin = mongoose.model("Admin")
 
 //Lida com ações do índice
 exports.index = function (req, res) {
-    Admin.get(function (err, admins) {
+    Admin.find({}, function (err, admins) {
         if (err) {
             res.json({
                 status: "error",
                 message: err,
             });
         }
-
+        console.log(admins);
         res.json({
             status: "success",
             message: "Admins retrieved successfully",
@@ -21,26 +22,27 @@ exports.index = function (req, res) {
     });
 };
 
-/*Cria novos admin
-exports.new = function (req, res) {
+//Cria novos admin
+const debug = exports.new = function (req, res) {
     let admin = new Admin();
 
-    admin.nome = req.body.nome;
-    admin.id = req.body.id;
-    admin.telefone = req.body.telefone;
-    admin.email = req.body.email;
-    admin.perfil_path = req.body.perfil_path;
+    admin.nome = "jose";
+    admin.id = "502";
+    admin.telefone = "32323232";
+    admin.email = "charas@email";
+    admin.perfil_path = "a";
 
     // salva o admin, check por errors
-    admin.save(function (err) {
-        // if (err)
-        //     res.json(err);
+    admin.save(function (err, data) {
+        if (err)
+            res.json(err);
+        console.log(data)
     res.json({
             message: 'New admin created!',
             data: admin
         });
     });
-};*/
+};
 
 //Handle view admin info
 exports.view = function (req, res) {

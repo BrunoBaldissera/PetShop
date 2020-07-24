@@ -27,10 +27,10 @@ var adminSchema = new mongoose.Schema({
     },	
 });
 
-var Admin = module.exports = mongoose.model('Admin', adminSchema);
+module.exports = mongoose.model('Admin', adminSchema);
 
 //module.exports.get = Admin.find({});
 
-module.exports.get = function (callback, limit){
-    Admin.find(callback).limit(limit);
-}
+//module.exports.get = function (callback, limit){
+//    Admin.find(callback).limit(limit);
+//}

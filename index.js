@@ -1,9 +1,8 @@
 var express = require("express");
-var mongoose = require("mongoose");
-var routes = require("./routes/routes");
-let bodyParser = require('body-parser');
-
 var app = express();
+var mongoose = require("mongoose");
+let bodyParser = require('body-parser');
+var Admin = require("./models/adminModel/admin")
 
 // Configura o body-parser para lidar rquisições de post
 app.use(bodyParser.urlencoded({
@@ -11,9 +10,10 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-const db_conn = "mongodb+srv://bbaldissera:1234@cluster0.tcafq.gcp.mongodb.net/test";
+const db_conn = "mongodb+srv://bbaldissera:1234@cluster0.tcafq.gcp.mongodb.net/PetShop2020";
 mongoose.connect(db_conn, {
     useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 var db = mongoose.connection;
 // Added check for DB connection
@@ -28,6 +28,7 @@ app.get('/', function (req, res) {
   res.json('Hello World!!!');
 });
 
+var routes = require("./routes/routes");
 app.use('/api', routes);
 
 app.listen(port, function () {
