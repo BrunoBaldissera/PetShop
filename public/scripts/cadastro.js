@@ -5,7 +5,7 @@ var form = new Vue({
 		login: "",
 		email : "",
 		pass : "",
-		invalid : 0,
+		dis_btn : 0,
 		showAlert: false
 	},
 
@@ -25,14 +25,24 @@ var form = new Vue({
 				    console.log("name (get): " + self.name) 
 					console.log("email (get): " + self.email)
 
-					let counter = response.data.length;
-					console.log(counter);
+					console.log(Object.keys(response.data.data).length);
 
-				    //console.log(arr.length)
-				    if (counter == 0){
+				    if (Object.keys(response.data.data).length == 0){
 				    	if (self.email != "" && self.name != ""){
 				    		console.log("login vai ser feito")
-				    		post = true;
+				    		axios.post('/api/clients', {
+						    	nome: self.name,
+								email: self.email,
+								login: self.login,
+						    	pass: self.pass
+							})
+							.then(function (response) {
+						    	console.log(response);
+						    	self.dis_btn = 1;
+						  	})
+						  	.catch(function (error) {
+						    	console.log(error);
+						  	})
 				    	}
 				    }
 				    else {
@@ -41,24 +51,6 @@ var form = new Vue({
 				    	console.log("showAlert (get): " + self.showAlert.toString())
 				    }
 				}) .catch( (err) => console.log(err) );
-
-			console.log("login: " + this.login);
-
-			if(post == true){
-				axios.post('/api/clients', {
-			    	nome: this.name,
-					email: this.email,
-					login: this.login,
-			    	pass: this.pass
-				})
-				.then(function (response) {
-			    	console.log(response);
-			  	})
-			  	.catch(function (error) {
-			    	console.log(error);
-			  	})
-			  	this.invalid = 1;
-			}
 		}
 	}
 });
