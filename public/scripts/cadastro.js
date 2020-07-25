@@ -15,7 +15,7 @@ var cad = new Vue({
 
 			//ENTENDER O :client
 			axios.get('/api/clients/search', {
-					login: self.login	
+					login: self.login
 				})
 			  	.then( (response) => {
 			  		console.log("login (get): " + self.login) 
@@ -46,7 +46,6 @@ var cad = new Vue({
 				    }
 				    else {
 				    	self.showAlert = true
-				    	console.log("login já existe, post: " + post.toString())
 				    	console.log("showAlert (get): " + self.showAlert.toString())
 				    }
 				}) .catch( (err) => console.log(err) );

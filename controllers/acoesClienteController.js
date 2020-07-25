@@ -33,7 +33,7 @@ const debug = exports.new = function (req, res) {
     client.telefone = req.body.telefone;
     client.email = req.body.email;
     client.perfil_path = req.body.perfil_path;
-    client.array_pets = req.body.array_pet;
+    client.array_pets = req.body.array_pets;
 
     // salva o cliente, check por errors
     client.save(function (err, data) {
@@ -47,7 +47,7 @@ const debug = exports.new = function (req, res) {
     });
 };
 
-//Handle view client info
+//Handle view client Info
 exports.view = function (req, res) {
     Client.find({ login: req.body.login }, function (err, client) {
         if (err)
