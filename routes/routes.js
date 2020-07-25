@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 
 //ACOESADMIN
     //importar acoesAdmin controller
-    var acoesAdminController = require('../controllers/acoesAdminController/acoesAdminController.js');
+    var acoesAdminController = require('../controllers/acoesAdminController.js');
     //admin routes
     // Contact routes
     router.route('/admins')
@@ -24,6 +24,18 @@ router.get('/', function (req, res) {
         //.patch(acoesAdminController.update)
         //.put(acoesAdminController.update)
         //.delete(acoesAdminController.delete)
+
+//CLIENTE
+    var acoesClienteController = require('../controllers/acoesClienteController.js')
+    router.route('/clients')
+        .get(acoesClienteController.index)
+        .post(acoesClienteController.new);
+
+    router.route('/clients/:client_id')
+        .get(acoesClienteController.view);
+        //.patch(acoesClientController.update)
+        //.put(acoesClientController.update)
+        //.delete(acoesClientController.delete)
 
 // exportamos as rotas da api
 module.exports = router;

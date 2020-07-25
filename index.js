@@ -4,7 +4,8 @@ const path = require('path');
 var mongoose = require("mongoose");
 let bodyParser = require('body-parser');
 
-var Admin = require("./models/adminModel/admin")
+var Admin = require("./models/adminModel/admin");
+var Client = require("./models/clientModel/client");
 
 // Configura o body-parser para lidar rquisições de post
 app.use(bodyParser.urlencoded({

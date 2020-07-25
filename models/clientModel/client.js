@@ -1,9 +1,9 @@
 var mongoose = require("mongoose");
 
-var clientSchema = mongoose.Schema({
+var clientSchema = new mongoose.Schema({
     id: {
         type: String,
-        required: true
+        required: false
     },
 
     nome: {
@@ -13,12 +13,12 @@ var clientSchema = mongoose.Schema({
 
     endereco: {
         type: String,
-        required: true,
+        required: false,
     },
 
     telefone: {
         type: String,
-        required: true,
+        required: false,
     },
 
     email: {
@@ -28,7 +28,7 @@ var clientSchema = mongoose.Schema({
 
     perfil_path: {
         type: String,
-        required: true,
+        required: false,
     },
 
     array_pets: [{
@@ -37,8 +37,7 @@ var clientSchema = mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('client', clientSchema);
-
+module.exports = mongoose.model('Client', clientSchema);
 
 //{
 //   "id": "12325453",
