@@ -25,6 +25,8 @@ exports.index = function (req, res) {
 const debug = exports.new = function (req, res) {
     let client = new Client();
 
+    client.login = req.body.login;
+    client.password = req.body.password;
     client.nome = req.body.nome;
     client.id = req.body.id;
     client.endereco = req.body.endereco;
@@ -64,12 +66,16 @@ exports.update = function (req, res) {
         if (err)
             res.send(err);
 
+        client.login = req.body.login;
+        client.password = req.body.password;
         client.nome = req.body.nome;
         client.id = req.body.id;
+        client.endereco = req.body.endereco;
         client.telefone = req.body.telefone;
         client.email = req.body.email;
         client.perfil_path = req.body.perfil_path;
-        
+        client.array_pets = req.body.array_pet;
+            
 
 // save the client and check for errors
         Client.save(function (err) {

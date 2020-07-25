@@ -34,4 +34,4 @@ var petSchema = mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('pet', petSchema);
+module.exports = mongoose.model('Pet', petSchema);

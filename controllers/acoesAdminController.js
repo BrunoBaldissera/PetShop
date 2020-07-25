@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 // Importa admin model
-//var Admin = require('../../models/adminModel/admin');
 var Admin = mongoose.model("Admin")
 
 //Lida com ações do índice
@@ -22,18 +21,17 @@ exports.index = function (req, res) {
     });
 };
 
-//Cria novos admin
+//Cria novos admins
 const debug = exports.new = function (req, res) {
     let admin = new Admin();
 
     admin.nome = req.body.nome;
+    admin.login = req.body.login;
+    admin.password = req.body.password;
     admin.id = req.body.id;
     admin.telefone = req.body.telefone;
     admin.email = req.body.email;
     admin.perfil_path = req.body.perfil_path;
-
-    admin.login = req.body.login;
-    admin.password = req.body.password;
 
     // salva o admin, check por errors
     admin.save(function (err, data) {
@@ -49,32 +47,34 @@ const debug = exports.new = function (req, res) {
 
 //Handle view admin info
 exports.view = function (req, res) {
-    Admin.findById(req.params.admin_id, function (err, admin) {
+    Admin.find({ login: req.body.login }, function (err, admin) {
         if (err)
             res.send(err);
         else res.json({
-            message: 'Admin details loading..',
+            message: 'admin details loading..',
             data: admin
         });
     });
 };
 
-/* Handle update admin info
+/* Handle update admins info
 exports.update = function (req, res) {
     let admin = new Admin();
     Admin.findById(req.params.admin_id, function (err, admin) {
         if (err)
             res.send(err);
 
-        admin.nome = req.body.nome;
-        admin.id = req.body.id;
-        admin.telefone = req.body.telefone;
-        admin.email = req.body.email;
-        admin.perfil_path = req.body.perfil_path;
+            admin.nome = req.body.nome;
+            admin.login = req.body.login;
+            admin.password = req.body.password;
+            admin.id = req.body.id;
+            admin.telefone = req.body.telefone;
+            admin.email = req.body.email;
+            admin.perfil_path = req.body.perfil_path;
         
 
 // save the admin and check for errors
-        admin.save(function (err) {
+        Admin.save(function (err) {
             if (err)
                 res.json(err);
             else res.json({
