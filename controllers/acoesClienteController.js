@@ -33,6 +33,9 @@ const debug = exports.new = function (req, res) {
     client.perfil_path = req.body.perfil_path;
     client.array_pets = req.body.array_pets;
 
+    client.login = req.body.login;
+    client.password = req.body.password;
+
     // salva o cliente, check por errors
     client.save(function (err, data) {
         if (err)

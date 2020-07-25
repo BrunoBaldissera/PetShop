@@ -6,6 +6,18 @@ var clientSchema = new mongoose.Schema({
         required: false
     },
 
+    login: {
+        type: String,
+        required: false,
+        default: "client"
+    },
+
+    password: {
+        type: String,
+        required: false,
+        default: "client"
+    },
+
     nome: {
         type: String,
         required: true,

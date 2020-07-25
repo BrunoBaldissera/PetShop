@@ -6,6 +6,18 @@ var adminSchema = new mongoose.Schema({
         required: true
     },
 
+    login: {
+        type: String,
+        required: false,
+        default: "admin"
+    },
+
+    password: {
+        type: String,
+        required: false,
+        default: "admin"
+    },
+
     nome: {
         type: String,
         required: true,

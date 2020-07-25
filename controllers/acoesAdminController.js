@@ -32,6 +32,9 @@ const debug = exports.new = function (req, res) {
     admin.email = req.body.email;
     admin.perfil_path = req.body.perfil_path;
 
+    admin.login = req.body.login;
+    admin.password = req.body.password;
+
     // salva o admin, check por errors
     admin.save(function (err, data) {
         if (err)

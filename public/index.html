@@ -128,8 +128,8 @@
           <div class="modal-body mx-3">
             <div class="md-form mb-5">
               <i class="fas fa-envelope prefix grey-text"></i>
-              <input type="email" id="login-email-input" class="form-control validate">
-              <label data-error="wrong" data-success="right" for="login-email-input">Email</label>
+              <input type="login" id="login-input" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="login-email-input">Login</label>
             </div>
 
             <div class="md-form mb-4">
@@ -166,11 +166,19 @@
                 </button>
               </div>
               <div class="modal-body mx-3">
+
                 <div class="md-form mb-5">
                   <i class="fas fa-user prefix grey-text"></i>
                   <input type="text" v-model="name" id="signup-name-input" class="form-control validate">
                   <label data-error="wrong" data-success="right" for="signup-name-input">Nome</label>
                 </div>
+
+                <div class="md-form mb-5">
+                  <i class="fas fa-user prefix grey-text"></i>
+                  <input type="text" v-model="login" id="signup-login-input" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="signup-login-input">Login</label>
+                </div>
+
                 <div class="md-form mb-5">
                   <i class="fas fa-envelope prefix grey-text"></i>
                   <input type="email" v-model="email" id="signup-email-input" class="form-control validate">
@@ -189,6 +197,7 @@
                   <br>
                   <input type="file" id="input-file-now" class="file-upload" />
                 </div>
+
               </div>
               <div id="cad-btn" class="modal-footer d-flex justify-content-center">
                 <button v-on:click="cadastra" class="btn btn-primary btn-lg">Cadastrar</button>
