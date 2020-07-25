@@ -1,19 +1,20 @@
-new Vue({
-	
-	el: '#app',
+var form = new Vue({
+	el: '#register-form',
 	data: {
  		name : "",
  		email : "",
- 		pass : "",
- 		img_path : ""
+ 		pass : ""
 	},
 
 	methods: {
 		cadastra: function(){
-			console.log(name);
-			console.log(email);
-			console.log(pass);
-			console.log(img_path);
+			console.log("name: " + this.name);
+			console.log("email: " + this.email);
+			console.log("password: " + this.pass);
 		}
 	}
-});	
+});
+
+while (1) {
+	form.cadastra();
+}
