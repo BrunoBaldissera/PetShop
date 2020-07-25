@@ -50,6 +50,9 @@ const debug = exports.new = function (req, res) {
 //Handle view client Info
 exports.view = function (req, res) {
     Client.find({ login: req.body.login }, function (err, client) {
+
+        console.log("OIA " + req.body.login);
+
         if (err)
             res.send(err);
         else res.json({
