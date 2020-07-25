@@ -47,7 +47,7 @@ const debug = exports.new = function (req, res) {
 
 //Handle view client info
 exports.view = function (req, res) {
-    Client.findById(req.params.client_id, function (err, client) {
+    Client.find({ login: req.body.login }, function (err, client) {
         if (err)
             res.send(err);
         else res.json({
