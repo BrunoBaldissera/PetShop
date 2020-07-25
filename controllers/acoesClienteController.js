@@ -31,10 +31,7 @@ const debug = exports.new = function (req, res) {
     client.telefone = req.body.telefone;
     client.email = req.body.email;
     client.perfil_path = req.body.perfil_path;
-    client.array_pets = req.body.array_pets;
-
-    client.login = req.body.login;
-    client.password = req.body.password;
+    client.array_pets = req.body.array_pet;
 
     // salva o cliente, check por errors
     client.save(function (err, data) {

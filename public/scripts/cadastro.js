@@ -4,17 +4,28 @@ var form = new Vue({
 		name : "",
 		login: "",
 		email : "",
- 		pass : ""
+ 		pass : "",
+ 		invalid : 0
 	},
 
 	methods: {
 		cadastra: function(){
-			console.log("name: " + this.name);
-			console.log("email: " + this.email);
-			console.log("password: " + this.pass);
-			console.log("login: " + this.login);
+			if(this.null == null) this.invalid = 1;
+			if(this.login == null) this.invalid = 1;
+			if(this.email == null) this.invalid = 1;
+			if(this.pass == null) this.invalid = 1;
 
-			axios.post('/api/clients', {
+			//ENTENDER O :client_id
+			axios.get('/api/clients:client_id')
+			  	.then(function(response){
+			    console.log(response.data); 
+			    console.log(response.status);
+			    if(response.data != null) this.invalid = 1;
+				}
+			);
+
+			if(this.invalid == 0){
+				axios.post('/api/clients', {
 			    	nome: this.name,
 					email: this.email,
 					login: this.login,
@@ -27,5 +38,6 @@ var form = new Vue({
 			    	console.log(error);
 			  	});
 			}
+		}
 	}
 });
