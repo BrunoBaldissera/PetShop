@@ -31,8 +31,11 @@ router.get('/', function (req, res) {
         .get(acoesClienteController.index)
         .post(acoesClienteController.new);
 
-    router.route('/clients/:client_id')
+    router.route('/clients/search')
         .get(acoesClienteController.view);
+
+    router.route('/clients/:client_id')
+        //.get(acoesClienteController.view);
         //.patch(acoesClientController.update)
         //.put(acoesClientController.update)
         //.delete(acoesClientController.delete)

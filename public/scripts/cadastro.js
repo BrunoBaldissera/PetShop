@@ -10,21 +10,25 @@ var form = new Vue({
 
 	methods: {
 		cadastra: function(){
-			if(this.null == null) this.invalid = 1;
-			if(this.login == null) this.invalid = 1;
-			if(this.email == null) this.invalid = 1;
-			if(this.pass == null) this.invalid = 1;
+			var post = true;
+			if(this.null === "") post = false;
+			if(this.login === "") post = false;
+			if(this.email === "") post = false;
+			if(this.pass === "") post = false;
 
-			//ENTENDER O :client_id
-			axios.get('/api/clients:client_id')
+			//ENTENDER O :client
+			axios.get('/api/clients/search')
 			  	.then(function(response){
-			    console.log(response.data); 
-			    console.log(response.status);
-			    if(response.data != null) this.invalid = 1;
+				    console.log(response.data); 
+				    console.log(response.status);
+				    if (response.data.length == 0){
+				    	post = false;
+				    	console.log("usuario ja existe..");
+				    }
 				}
 			);
 
-			if(this.invalid == 0){
+			if(post = true){
 				axios.post('/api/clients', {
 			    	nome: this.name,
 					email: this.email,
@@ -36,7 +40,8 @@ var form = new Vue({
 			  	})
 			  	.catch(function (error) {
 			    	console.log(error);
-			  	});
+			  	})
+			  	this.invalid = 1;
 			}
 		}
 	}
