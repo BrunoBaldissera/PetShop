@@ -28,7 +28,7 @@ var cad = new Vue({
 
 				    if (Object.keys(response.data.data).length == 0){
 				    	if (self.email != "" && self.name != ""){
-				    		console.log("login vai ser feito")
+				    		console.log("cadastro vai ser feito")
 				    		axios.post('/api/clients', {
 						    	nome: self.name,
 								email: self.email,

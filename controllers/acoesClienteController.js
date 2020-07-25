@@ -49,16 +49,16 @@ const debug = exports.new = function (req, res) {
 
 //Handle view client Info
 exports.view = function (req, res) {
+    console.log("login eh %s", req.body.login);
     Client.find({ login: req.body.login }, function (err, client) {
-
-        console.log("OIA " + req.body.login);
-
         if (err)
             res.send(err);
-        else res.json({
-            message: 'client details loading..',
-            data: client
-        });
+        else {
+            res.json({
+                message: 'client details loading..',
+                data: client
+            });
+        }
     });
 };
 

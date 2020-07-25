@@ -20,12 +20,10 @@ var log = new Vue({
 				    console.log("login (get): " + self.login_c) 
 					console.log("pass (get): " + self.pass_c)
 
-					console.log("OBA " + Object.keys(response.data.data).length);
-
 				    if (Object.keys(response.data.data).length != 0){
 				    	console.log(Object.keys(response.data.data).length);
-						console.log(response.data.data.login);	
-						console.log(response.data.data.password);
+						console.log(response.data.data[0].login);	
+						console.log(response.data.data[0].password);
 
 				    	console.log(self.pass_c)
 				    	if (self.pass_c == response.data.data[0].password){
