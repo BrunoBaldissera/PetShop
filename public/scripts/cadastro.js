@@ -23,10 +23,13 @@ var form = new Vue({
 				    console.log(response.data) 
 				    console.log(response.status)
 				    console.log("name (get): " + self.name) 
-				    console.log("email (get): " + self.email) 
-				    console.log(response.data.length)
-				    console.log(arr.length)
-				    if (response.data.length == 0){
+					console.log("email (get): " + self.email)
+
+					let counter = response.data.length;
+					console.log(counter);
+
+				    //console.log(arr.length)
+				    if (counter == 0){
 				    	if (self.email != "" && self.name != ""){
 				    		console.log("login vai ser feito")
 				    		post = true;
@@ -37,7 +40,7 @@ var form = new Vue({
 				    	console.log("login já existe, post: " + post.toString())
 				    	console.log("showAlert (get): " + self.showAlert.toString())
 				    }
-				});
+				}) .catch( (err) => console.log(err) );
 
 			console.log("login: " + this.login);
 
