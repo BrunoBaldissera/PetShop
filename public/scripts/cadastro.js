@@ -1,4 +1,4 @@
-var form = new Vue({
+var cad = new Vue({
 	el: '#register-form',
 	data: {
 		name : "",
@@ -11,12 +11,11 @@ var form = new Vue({
 
 	methods: {
 		cadastra: function(){
-			var post = false;
 			var self = this;
 
 			//ENTENDER O :client
 			axios.get('/api/clients/search', {
-					login: self.login
+					login: self.login	
 				})
 			  	.then( (response) => {
 			  		console.log("login (get): " + self.login) 

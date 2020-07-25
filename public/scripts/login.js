@@ -1,36 +1,43 @@
-
-
-var form = new Vue({
+var log = new Vue({
 	el: '#login-form',
 	data: {
-		
-		login: "",
- 		pass : ""
+		login_c: "",
+		pass_c : "",
+		name_cli : "",
+		dis_btn_c : 0,
+		showAlert_c: false
 	},
 
 	methods: {
 		login: function(){
+			var self = this;
+			axios.get('/api/clients/search', {
+					login: self.login_c
+				})
+			  	.then( (response) => {
+				    console.log(response.data) 
+				    console.log(response.status)
+				    console.log("login (get): " + self.login_c) 
+					console.log("pass (get): " + self.pass_c)
 
-			console.log("password: " + this.pass);
-			console.log("login: " + this.login);
+				    if (Object.keys(response.data.data).length != 0){
+				    	console.log(Object.keys(response.data.data).length);
+						console.log(response.data.data[0].login);	
+						console.log(response.data.data[0].password);
 
-			axios.get('http://webcode.me')
-                
-				.then(function (response) {
-                    console.log(response);
-                    
-                    let result = pass.localeCompare(db_pass); //compara senha igual a do banco
-                    console.log("senha compare deu " + result);
-			  	})
-			  	.catch(function (error) {
-			    	console.log(error);
-				  });
-				  
-				  var cursor = db.clients.find({login: this.login});
-					cursor.forEach(function(clients){
-					//access all the attributes of the document here
-					var id = customer._id;
-					})
-			}
+				    	console.log(self.pass_c)
+				    	if (self.pass_c == response.data.data[0].password){
+				    		console.log("login aceito!")
+				    		self.name_cli = response.data.data[0].name
+				    		self.dis_btn_c = 1;
+				    	}
+				    }
+				    else {
+				    	self.showAlert_c = true
+				    	console.log("login incorreto")
+				    	console.log("showAlert (get): " + self.showAlert_c.toString())
+				    }
+				}) .catch( (err) => console.log(err) );
 		}
-	});
+	}
+});
