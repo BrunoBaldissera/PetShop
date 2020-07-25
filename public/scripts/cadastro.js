@@ -4,8 +4,10 @@ var form = new Vue({
 		name : "",
 		login: "",
 		email : "",
- 		pass : "",
- 		invalid : 0
+		pass : "",
+		invalid : 0,
+
+		visible: false
 	},
 
 	methods: {
@@ -17,13 +19,16 @@ var form = new Vue({
 			if(this.pass === "") post = false;
 
 			//ENTENDER O :client
-			axios.get('/api/clients/search')
+			axios.get('/api/clients/search', {
+				login: this.login
+			})
 			  	.then(function(response){
 				    console.log(response.data); 
 				    console.log(response.status);
-				    if (response.data.length == 0){
+				    if (response.data.length != 0){
 				    	post = false;
-				    	console.log("usuario ja existe..");
+						console.log("usuario ja existe..");
+						this.visible = true;
 				    }
 				}
 			);

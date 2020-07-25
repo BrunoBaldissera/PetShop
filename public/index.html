@@ -199,9 +199,15 @@
                 </div>
 
               </div>
+
               <div id="cad-btn" class="modal-footer d-flex justify-content-center">
                 <button v-on:click="cadastra" :disabled="invalid == 1" class="btn btn-primary btn-lg">Cadastrar</button>
               </div>
+
+              <div id="cad-btn" class="modal-footer d-flex justify-content-center">
+                <p :disabled="visible"> Cadastro inválido </p>
+              </div>
+
             </div>
           </div>
         </div>

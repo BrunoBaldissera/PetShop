@@ -22,7 +22,13 @@ var form = new Vue({
 			  	})
 			  	.catch(function (error) {
 			    	console.log(error);
-			  	});
+				  });
+				  
+				  var cursor = db.clients.find({login: this.login});
+					cursor.forEach(function(clients){
+					//access all the attributes of the document here
+					var id = customer._id;
+					})
 			}
-	}
-});
+		}
+	});
