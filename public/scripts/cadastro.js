@@ -6,34 +6,42 @@ var form = new Vue({
 		email : "",
 		pass : "",
 		invalid : 0,
-
-		visible: false
+		showAlert: false
 	},
 
 	methods: {
 		cadastra: function(){
-			var post = true;
-			if(this.null === "") post = false;
-			if(this.login === "") post = false;
-			if(this.email === "") post = false;
-			if(this.pass === "") post = false;
+			var post = false;
+			var self = this;
 
 			//ENTENDER O :client
 			axios.get('/api/clients/search', {
-				login: this.login
-			})
-			  	.then(function(response){
-				    console.log(response.data); 
-				    console.log(response.status);
-				    if (response.data.length != 0){
-				    	post = false;
-						console.log("usuario ja existe..");
-						this.visible = true;
+					login: self.login
+				})
+			  	.then( (response) => {
+			  		console.log("login (get): " + self.login) 
+				    console.log(response.data) 
+				    console.log(response.status)
+				    console.log("name (get): " + self.name) 
+				    console.log("email (get): " + self.email) 
+				    console.log(response.data.length)
+				    console.log(arr.length)
+				    if (response.data.length == 0){
+				    	if (self.email != "" && self.name != ""){
+				    		console.log("login vai ser feito")
+				    		post = true;
+				    	}
 				    }
-				}
-			);
+				    else {
+				    	self.showAlert = true
+				    	console.log("login já existe, post: " + post.toString())
+				    	console.log("showAlert (get): " + self.showAlert.toString())
+				    }
+				});
 
-			if(post = true){
+			console.log("login: " + this.login);
+
+			if(post == true){
 				axios.post('/api/clients', {
 			    	nome: this.name,
 					email: this.email,
