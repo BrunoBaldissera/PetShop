@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 var adminSchema = new mongoose.Schema({
     id: {
         type: String,
-        required: true
+        required: false
     },
 
     login: {
@@ -37,12 +37,12 @@ var adminSchema = new mongoose.Schema({
 
     telefone: {
         type: String,
-        required: true,
+        required: false,
     },
 
     email: {
         type: String,
-        required: true,
+        required: false,
     },
 
     token: {
@@ -52,7 +52,7 @@ var adminSchema = new mongoose.Schema({
 
     perfil_path: {
         type: String,
-        required: true,
+        required: false,
     },	
 });
 

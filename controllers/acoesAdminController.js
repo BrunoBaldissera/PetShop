@@ -34,16 +34,27 @@ const debug = exports.new = function (req, res) {
     admin.perfil_path = req.body.perfil_path;
 
     admin.setPassword(req.body.password);
+    console.log("admin: ");
+    console.log(admin);
 
     // salva o admin, check por errors
     admin.save(function (err, data) {
-        if (err)
+        console.log("err: ");
+        console.log(err); 
+
+        console.log("data: ");
+        console.log(data); 
+        
+        if (err) {
             res.json(err);
-        console.log(data)
-    res.json({
-            message: 'New admin created!',
-            data: admin
-        });
+        }
+
+        else{
+            res.json({
+                message: 'New admin created!',
+                data: admin
+            });
+        }
     });
 };
 
