@@ -62,7 +62,7 @@
         <!-- JUMBOTRON -->
         <div class="jumbotron jumbotron-fluid color4">
           <div class="container">
-            <h1 class="display-4">Nome do Admin</h1>
+            <h1 class="display-4">{{nome_a}}</h1>
             <hr class="my-3 w-75">
             <div class="col-4 ml-1"><h3 class="">Gets things done</h3></div>
           </div>
@@ -74,12 +74,12 @@
         <img id="foto-admin" class="img-responsive float-left" src="images/dados_admin_ph.jpeg">        
         <!--ID-->
         <h5 class="mt-5">ID <i class="fas fa-user"></i></h4>
-            <p> Meu ID </p>
+            <p> {{id_a}} </p>
         <!--Fone-->
         <h5>Fone <i class="fas fa-phone"></i></h4>
-            <p> Meu fone </p>
+            <p> {{telefone_a}} </p>
         <!--Email-->
-        <h5>Email <i class="fas fa-envelope"></i></h4>
+        <h5> {{email_a}} <i class="fas fa-envelope"></i></h4>
             <a class="textColor1" href="url">email@email.email</a>
 
     </div>
@@ -92,6 +92,8 @@
       	<div class="col-sm"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></div>
     	</div>
   	</div>
+
+    <script src="./scripts/dados_admin.js"></script>
 
   </body>
 </html>
