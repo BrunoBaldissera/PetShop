@@ -23,7 +23,7 @@
     <!-- NavBar -->
   <nav id="navbar" class="navbar navbar-dark navbar-expand-md sticky-top">
       <div class="container-fluid color1">
-          <a class="navbar-brand col-4" href="#"><img id="logo" class="img-responsive float-left img-thumbnail media" src="../images/homepage_logo.jpeg">
+          <a class="navbar-brand col-4" href="../index.html"><img id="logo" class="img-responsive float-left img-thumbnail media" src="../images/homepage_logo.jpeg">
             <h4 id="petshop-name" class="textColor2 pl-5">PetShop</h4>
           </a>
           <button class="navbar-toggler float-right col-4 mr-3" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -41,10 +41,10 @@
                   <input class="form-control py-2 border-right-0 border" type="search" placeholder="Buscar no site">
                 </div>
               </li>
-              <li class="nav-item ml-3"><a class="nav-link" href="#">Serviços</a></li>
-              <li class="nav-item ml-3"><a class="nav-link" href="#">Produtos</a></li>
-              <li class="nav-item ml-3"><a class="nav-link" href="#">Calendário</a></li>
-              <li class="nav-item ml-3"><a class="nav-link" href="#">Conta</a></li>
+              <li class="nav-item ml-3"><a class="nav-link" href="lista_servicos.html">Serviços</a></li>
+              <li class="nav-item ml-3"><a class="nav-link" href="lista_produtos.html">Produtos</a></li>
+              <li class="nav-item ml-3"><a class="nav-link" href="calendar.html">Calendário</a></li>
+              <li class="nav-item ml-3"><a class="nav-link" href="dados_cliente.html">Conta</a></li>
             </ul>
           </div>  
       </div>
@@ -63,53 +63,79 @@
     
         <!-- REGISTER POPUP -->
         <div class="modal fade clearfix float-left" id="register-form" tabindex="-1" role="dialog" aria-labelledby="register-popups"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header text-center">
-              <h4 class="modal-title w-100 font-weight-bold">Cadastrar</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body mx-3">
-              <div class="md-form mb-5">
-                <i class="fas fa-user prefix grey-text"></i>
-                <input type="text" id="signup-name-input" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="signup-name-input">Nome</label>
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Cadastrar</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-              <div class="md-form mb-5">
-                <i class="fas fa-envelope prefix grey-text"></i>
-                <input type="email" id="signup-email-input" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="signup-email-input">Email</label>
+              <div class="modal-body mx-3">
+
+                <div class="md-form mb-5">
+                  <i class="fas fa-user prefix grey-text"></i>
+                  <input type="text" v-model="name" id="signup-name-input" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="signup-name-input">Nome</label>
+                </div>
+
+                <div class="md-form mb-5">
+                  <i class="fas fa-user prefix grey-text"></i>
+                  <input type="text" v-model="login" id="signup-login-input" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="signup-login-input">Login</label>
+                </div>
+
+                <div class="md-form mb-5">
+                  <i class="fas fa-envelope prefix grey-text"></i>
+                  <input type="email" v-model="email" id="signup-email-input" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="signup-email-input">Email</label>
+                </div>
+
+                <div class="md-form mb-4">
+                  <i class="fas fa-lock prefix grey-text"></i>
+                  <input type="password" v-model="pass" id="signup-password-input" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="signup-password-input">Senha</label>
+                </div>
+
+                <!---->
+
+                <div class="md-form mb-4">
+                  <i class="fas fa-home prefix grey-text"></i>
+                  <input type="text" v-model="endereco" id="signup-endereco-input" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="signup-endereco-input">Endereço</label>
+                </div>
+
+                <div class="md-form mb-4">
+                  <i class="fas fa-mobile prefix grey-text"></i>
+                  <input type="text" v-model="telefone" id="signup-telefone-input" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="signup-telefone-input">Telefone</label>
+                </div>
+
+                <!---->
+
+                <div class="file-upload-wrapper">
+                  <i class="fas fa-user prefix grey-text"></i>
+                  <label data-error="wrong" data-success="right" for="signup-phone-input">Foto</label>
+                  <br>
+                  <input type="file" id="input-file-now" class="file-upload" />
+                </div>
+
               </div>
 
-              <div class="md-form mb-5">
-                <i class="fas fa-phone prefix grey-text"></i>
-                <input type="phone" id="signup-phone-input" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="signup-phone-input">Telefone</label>
+              <div id="cad-btn" class="modal-footer d-flex justify-content-center">
+                <button v-on:click="cadastra" :disabled="dis_btn == 1" class="btn btn-primary btn-lg">Cadastrar</button>
               </div>
 
-              <div class="md-form mb-4">
-                <i class="fas fa-lock prefix grey-text"></i>
-                <input type="password" id="signup-password-input" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="signup-password-input">Senha</label>
+              <div>
+                <h5 v-if="showAlert" class="ml-5">Cadastro inválido! Tente novamente</h5>
+                <h5 v-if="dis_btn == 1" class="ml-5">Cadastro bem-sucedido!</h5>
+
               </div>
 
-              <div class="file-upload-wrapper">
-                <i class="fas fa-user prefix grey-text"></i>
-                <label data-error="wrong" data-success="right" for="signup-phone-input">Foto</label>
-                <br>
-                <input type="file" id="input-file-now" class="file-upload" />
-              </div>
-
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-              <button class="btn btn-primary btn-lg">Cadastrar</button>
             </div>
           </div>
         </div>
-      </div>
 
       <div class="row row-cards pb-5">
         <div class="col-md d-flex flex-row justify-content-center">
@@ -142,7 +168,7 @@
             <div class="card-body">
               <h3 class="card-title">Registrar Produtos</h3>
               <p class="card-text">Acesse nosso estoque de produtos</p>
-              <a href="#" class="btn btn-primary ml-5"><i class="fas fa-bone fa-3x"></i></a>
+              <a href="reg_prod.html" class="btn btn-primary ml-5"><i class="fas fa-bone fa-3x"></i></a>
             </div>
           </div>     
         </div>
@@ -153,7 +179,7 @@
             <div class="card-body">
               <h3 class="card-title">Registrar Serviços</h3>
               <p class="card-text">Acesse a nossa seleção de serviços</p>
-              <a href="#" class="btn btn-primary ml-5"><i class="fas fa-concierge-bell fa-3x"></i></a>
+              <a href="reg_serv.html" class="btn btn-primary ml-5"><i class="fas fa-concierge-bell fa-3x"></i></a>
             </div>
           </div>     
         </div>
@@ -170,6 +196,8 @@
     </div>
     
     <!-- Optional JavaScript -->
+    <script src="./scripts/cadastro.js"></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
