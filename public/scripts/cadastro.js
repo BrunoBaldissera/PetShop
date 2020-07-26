@@ -16,10 +16,10 @@ var cad = new Vue({
 	methods: {
 		cadastra: function(){
 			var self = this;
-			var client = {email: self.email, password: self.pass};
+			var client = {name:self.name, login: self.login, email: self.email, password: self.pass};
 			//ENTENDER O :client
-			axios.post('/', {
-					client: client
+			axios.post('/api/reg', {
+					client
 				})
 			  	.then( (response) => {
 			  		console.log("login (get): " + self.login) 

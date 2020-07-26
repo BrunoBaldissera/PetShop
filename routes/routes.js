@@ -2,19 +2,32 @@
 // inicializamos o router do express
 var mongoose = require('mongoose');
 let router = require('express').Router();
+let bodyParser = require('body-parser');
+router.use(bodyParser.json());
 const passport = require('passport');
 const auth = require('./auth');
 const Client = mongoose.model('Client');
 
 //AUTH===========================================================================================================
 //POST new user route (optional, everyone has access)
-router.post('/', auth.optional, (req, res, next) => {
+router.post('/reg', auth.optional, (req, res, next) => {
+  console.log("registrando usuario com auth");
   const { body: { client } } = req;
+  console.log(client);
+  console.log("client.email: " + client.email);
 
   if(!client.email) {
     return res.status(422).json({
       errors: {
         email: 'is required',
+      },
+    });
+  }
+
+  if(!client.login) {
+    return res.status(422).json({
+      errors: {
+        login: 'is required',
       },
     });
   }
@@ -27,10 +40,8 @@ router.post('/', auth.optional, (req, res, next) => {
     });
   }
 
-  const finalUser = new Client(client);
-
-  finalUser.setPassword(client.password);
-
+  const finalClient = new Client(client);
+  finalClient.setPassword(client.password);
   return finalClient.save()
     .then(() => res.json({ client: finalClient.toAuthJSON() }));
 });
@@ -38,8 +49,10 @@ router.post('/', auth.optional, (req, res, next) => {
 //POST login route (optional, everyone has access)
 router.post('/login', auth.optional, (req, res, next) => {
   const { body: { client } } = req;
+  console.log(client);
 
-  if(!client.email) {
+  if(!client.login) {
+    console.log("login required");
     return res.status(422).json({
       errors: {
         email: 'is required',
@@ -48,6 +61,7 @@ router.post('/login', auth.optional, (req, res, next) => {
   }
 
   if(!client.password) {
+    console.log("password required");
     return res.status(422).json({
       errors: {
         password: 'is required',
@@ -55,7 +69,16 @@ router.post('/login', auth.optional, (req, res, next) => {
     });
   }
 
-  return passport.authenticate('local', { session: false }, (err, passportClient, info) => {
+   passport.authenticate('local', function(err, client, info) {
+    if (err) { return next(err); }
+    if (!client) { return res.redirect('/login'); }
+    //req.logIn(user, function(err) {
+    //  if (err) { return next(err); }
+    //  return res.redirect('/users/' + user.username);
+    //});
+  })(req, res, next);
+
+  /* return passport.authenticate('local', { session: false }, (err, passportClient, info) => {
     if(err) {
       return next(err);
     }
@@ -66,9 +89,9 @@ router.post('/login', auth.optional, (req, res, next) => {
 
       return res.json({ user: client.toAuthJSON() });
     }
-
+    console.log("chegou ate o final");
     return status(400).info;
-  })(req, res, next);
+  })(req, res, next);*/
 });
 
 //GET current route (required, only authenticated users have access)

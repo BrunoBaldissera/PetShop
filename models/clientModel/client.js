@@ -13,14 +13,24 @@ var clientSchema = new mongoose.Schema({
         required: false,
     },
 
-    password: {
+    /*password: {
         type: String,
         required: false
+    },*/
+
+    salt: {
+        type: String,
+        required: true,
+    },
+
+    hash: {
+        type: String,
+        required: true,
     },
 
     nome: {
         type: String,
-        required: true,
+        required: false,
     },
 
     endereco: {
@@ -43,10 +53,10 @@ var clientSchema = new mongoose.Schema({
         required: false,
     },
 
-    token: {
+    /*token: {
         type: String,
         required: false,
-    },
+    },*/
 
     array_pets: [{
         type: String

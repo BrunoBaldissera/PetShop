@@ -25,6 +25,8 @@
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
+    "cors": "^2.8.5",
+    "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "express-jwt": "^6.0.0",
     "express-session": "^1.17.1",

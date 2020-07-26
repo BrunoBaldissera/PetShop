@@ -13,8 +13,12 @@ var log = new Vue({
 	methods: {
 		login: function(){
 			var self = this;
-			axios.post('/', {
-					login: self.login_c
+			var client = {
+				login: self.login_c,
+				password: self.pass_c
+			};
+			axios.post('/api/login', {
+					client
 				})
 			  	.then( (response) => {
 				    console.log(response.data);
