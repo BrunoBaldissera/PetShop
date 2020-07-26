@@ -29,6 +29,10 @@ var port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname + '/public')));
 
+import { Basic } from 'permit'
+const permit = new Basic()
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/public/index.html'));
 });
