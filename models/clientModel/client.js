@@ -54,6 +54,11 @@ var clientSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('Client', clientSchema);
 
+clientSchema.methods.findByToken = function (token, cb) {
+    return this.find({
+        token: this.token
+    }, cb);
+
 //{
 //   "id": "12325453",
 //   "nome": "Ceneman Gazoni",

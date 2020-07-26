@@ -29,6 +29,39 @@ var port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname + '/public')));
 
+import { Bearer } from 'permit'
+
+const permit = new Bearer({
+  basic: 'username', // Also allow a Basic Auth username as a token.
+  query: 'access_token', // Also allow an `?access_token=` query parameter.
+})
+
+function authenticate(req, res, next) {
+  // Try to find the bearer token in the request.
+  const token = permit.check(req)
+
+  // No token found, so ask for authentication.
+  if (!token) {
+    permit.fail(res)
+    return next(new Error(`Authentication required!`))
+  }
+
+  // Perform your authentication logic however you'd like...
+  db.clients.findByToken(token, (err, client) => {
+    if (err) return next(err)
+
+    // No user found, so their token was invalid.
+    if (!client) {
+      permit.fail(res)
+      return next(new Error(`Authentication invalid!`))
+    }
+
+    // Authentication succeeded, save the context and proceed...
+    req.client = client
+    next()
+  })
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/public/index.html'));
 });

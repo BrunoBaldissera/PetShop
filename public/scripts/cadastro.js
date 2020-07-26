@@ -39,7 +39,8 @@ var cad = new Vue({
 								login: self.login,
 								password: self.pass,
 								endereco: self.endereco,
-								telefone: self.telefone
+								telefone: self.telefone,
+								token: self.login+':'+self.password
 							})
 							.then(function (response) {
 						    	console.log(response);
