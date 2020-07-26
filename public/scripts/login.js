@@ -13,13 +13,13 @@ var log = new Vue({
 	methods: {
 		login: function(){
 			var self = this;
-			axios.post('/api/clients/search', {
+			axios.post('/', {
 					login: self.login_c
 				})
 			  	.then( (response) => {
-				    console.log(response.data) ;
+				    console.log(response.data);
 				    console.log(response.status);
-				    console.log("login (get): " + self.login_c);
+				    /*console.log("login (get): " + self.login_c);
 					console.log("pass (get): " + self.pass_c);
 
 					console.log("novo " + response.data.length);
@@ -44,7 +44,7 @@ var log = new Vue({
 				    	self.showAlert_c = true;
 				    	console.log("login incorreto");
 				    	console.log("showAlert (get): " + self.showAlert_c.toString());
-				    }
+				    }*/
 				}) .catch( (err) => console.log(err) );
 		}
 	}

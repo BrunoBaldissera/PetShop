@@ -2,7 +2,10 @@ var express = require("express");
 var app = express();
 const path = require('path');
 var mongoose = require("mongoose");
+const session = require('express-session');
 let bodyParser = require('body-parser');
+
+app.use(session({ secret: 'passport-tutorial', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 
 var Admin = require("./models/adminModel/admin");
 var Client = require("./models/clientModel/client");
@@ -25,42 +28,12 @@ if(!db)
 else
     console.log("Db connected successfully")
 
+require('./models/clientModel/client');
+require('./config/passport');
+
 var port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname + '/public')));
-
-import { Bearer } from 'permit'
-
-const permit = new Bearer({
-  basic: 'username', // Also allow a Basic Auth username as a token.
-  query: 'access_token', // Also allow an `?access_token=` query parameter.
-})
-
-function authenticate(req, res, next) {
-  // Try to find the bearer token in the request.
-  const token = permit.check(req)
-
-  // No token found, so ask for authentication.
-  if (!token) {
-    permit.fail(res)
-    return next(new Error(`Authentication required!`))
-  }
-
-  // Perform your authentication logic however you'd like...
-  db.clients.findByToken(token, (err, client) => {
-    if (err) return next(err)
-
-    // No user found, so their token was invalid.
-    if (!client) {
-      permit.fail(res)
-      return next(new Error(`Authentication invalid!`))
-    }
-
-    // Authentication succeeded, save the context and proceed...
-    req.client = client
-    next()
-  })
-}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/public/index.html'));
@@ -68,6 +41,7 @@ app.get('/', function (req, res) {
 
 var routes = require("./routes/routes");
 app.use('/api', routes);
+app.use('/api/routes', routes)
 
 app.listen(port, function () {
     console.log("Example app listening on port "+port+"!");

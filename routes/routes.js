@@ -1,6 +1,90 @@
 //routes.js
 // inicializamos o router do express
+var mongoose = require('mongoose');
 let router = require('express').Router();
+const passport = require('passport');
+const auth = require('./auth');
+const Client = mongoose.model('Client');
+
+//AUTH===========================================================================================================
+//POST new user route (optional, everyone has access)
+router.post('/', auth.optional, (req, res, next) => {
+  const { body: { client } } = req;
+
+  if(!client.email) {
+    return res.status(422).json({
+      errors: {
+        email: 'is required',
+      },
+    });
+  }
+
+  if(!client.password) {
+    return res.status(422).json({
+      errors: {
+        password: 'is required',
+      },
+    });
+  }
+
+  const finalUser = new Client(client);
+
+  finalUser.setPassword(client.password);
+
+  return finalClient.save()
+    .then(() => res.json({ client: finalClient.toAuthJSON() }));
+});
+
+//POST login route (optional, everyone has access)
+router.post('/login', auth.optional, (req, res, next) => {
+  const { body: { client } } = req;
+
+  if(!client.email) {
+    return res.status(422).json({
+      errors: {
+        email: 'is required',
+      },
+    });
+  }
+
+  if(!client.password) {
+    return res.status(422).json({
+      errors: {
+        password: 'is required',
+      },
+    });
+  }
+
+  return passport.authenticate('local', { session: false }, (err, passportClient, info) => {
+    if(err) {
+      return next(err);
+    }
+
+    if(passportClient) {
+      const client = passportClient;
+      client.token = passportClient.generateJWT();
+
+      return res.json({ user: client.toAuthJSON() });
+    }
+
+    return status(400).info;
+  })(req, res, next);
+});
+
+//GET current route (required, only authenticated users have access)
+router.get('/current', auth.required, (req, res, next) => {
+  const { payload: { id } } = req;
+
+  return Client.findById(id)
+    .then((client) => {
+      if(!client) {
+        return res.sendStatus(400);
+      }
+
+      return res.json({ client: client.toAuthJSON() });
+    });
+});
+//===========================================================================================================
 
 // configuramos uma resposta padrão de requisições
 router.get('/', function (req, res) {
