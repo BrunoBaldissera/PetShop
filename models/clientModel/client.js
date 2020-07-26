@@ -41,6 +41,11 @@ var clientSchema = new mongoose.Schema({
         required: false,
     },
 
+    token: {
+        type: String,
+        required: false,
+    },
+
     array_pets: [{
         type: String
     }]

@@ -33,6 +33,11 @@ var adminSchema = new mongoose.Schema({
         required: true,
     },
 
+    token: {
+        type: String,
+        required: false,
+    },
+
     perfil_path: {
         type: String,
         required: true,

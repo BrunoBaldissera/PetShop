@@ -2,9 +2,10 @@ var perfil = new Vue({
 	el: '#perfil-admin',
     
     data: {
-        nome: "",
-        telefone: "",
-        email: ""
+        nome_a: "",
+        id_a: "",
+        telefone_a: "",
+        email_a: ""
 	},
 
 	methods: {
