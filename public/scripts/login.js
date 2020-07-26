@@ -23,15 +23,16 @@ var log = new Vue({
 				    console.log("login (get): " + self.login_c);
 					console.log("pass (get): " + self.pass_c);
 
-				    if (response.data == null){
-						console.log(response.data.login);
+				    if (Object.keys(response.data).length != 0){
+						console.log(response.data.client);
+						console.log(response.data.val.toString());	
 
 				    	console.log(self.pass_c)
-				    	if (response.val == true){
+				    	if (response.data.val){
 				    		console.log("login aceito!");
 				    		self.pw_inc = false;
 				    		self.log_ok = true;
-				    		self.name_cli = response.data.nome;
+				    		self.name_cli = response.data.client.nome;
 				    		self.dis_btn_c = 1;
 				    	}
 				    	else

@@ -76,13 +76,14 @@ exports.view = async (req, res, next) => {
 exports.login = async (req, res, next) => {
     try{
         console.log("vc quis printar controller " + req.body.login);
-        Client.findOne({login: req.body.login})
+        await Client.findOne({login: req.body.login})
             .then( (client) => {
                 console.log(client);
                 console.log(req.body.password);
                 var val = client.validatePassword(req.body.password);
+                console.log('validation finished');
                 res.json({
-                    data: client,
+                    client: client,
                     val: val
                 });
             }) 
