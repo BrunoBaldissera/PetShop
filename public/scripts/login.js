@@ -20,8 +20,10 @@ var log = new Vue({
 				    console.log("login (get): " + self.login_c) 
 					console.log("pass (get): " + self.pass_c)
 
-				    if (Object.keys(response.data.data).length != 0){
-				    	console.log(Object.keys(response.data.data).length);
+					console.log("novo " + response.data.length)
+
+				    if (response.data.length != 0){
+				    	console.log(response.data.length);
 						console.log(response.data.data[0].login);	
 						console.log(response.data.data[0].password);
 

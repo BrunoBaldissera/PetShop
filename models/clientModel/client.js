@@ -9,7 +9,6 @@ var clientSchema = new mongoose.Schema({
     login: {
         type: String,
         required: false,
-        unique: true
     },
 
     password: {

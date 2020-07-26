@@ -48,9 +48,40 @@ const debug = exports.new = function (req, res) {
 };
 
 //Handle view client Info
-exports.view = function (req, res) {
-    console.log("login eh %s", req.body.login);
-    Client.find({ login: req.body.login }, function (err, client) {
+/*exports.view = function (req, res, next) {
+    console.log("login eh %s", req.params.login);
+    Client.find({ login: req.params.login })
+        .then(client => {
+            res.status(200).json(client);
+        })
+        .catch(err => {
+            next(err);
+        });
+    
+   
+};*/
+
+exports.view = async (req, res, next) => {
+    try{
+        const client = await Client.find({ login: req.body.login });
+
+        console.log("vc quis printar controller " + req.body.login);
+
+        res.status(200).json(client);
+    } catch(err){
+        next(err);
+    }s
+};
+
+/*exports.view: async (req, res, next) => {
+    console.log('Começou');
+    await Client.find({ login: req.params.login });
+    console.log('Acabou a piada.');
+}*/
+//Handle view client Info
+/*exports.view = function (req, res) {
+    console.log("login eh %s", req.params.login);
+    Client.find({ login: req.params.login }, function (err, client) {
         if (err)
             res.send(err);
         else {
@@ -60,7 +91,33 @@ exports.view = function (req, res) {
             });
         }
     });
-};
+};*/
+
+/*// Handle delete contact
+exports.delete = function (req, res) {
+    Contact.remove({
+        _id: req.params.contact_id
+    }, function (err, contact) {
+        if (err)
+            res.send(err);
+res.json({
+            status: "success",
+            message: 'Contact deleted'
+        });
+    });
+};*/
+
+/*// Handle view contact info
+exports.view = function (req, res) {
+    Contact.findById(req.params.contact_id, function (err, contact) {
+        if (err)
+            res.send(err);
+        res.json({
+            message: 'Contact details loading..',
+            data: contact
+        });
+    });
+};*/
 
 /* Handle update clients info
 exports.update = function (req, res) {

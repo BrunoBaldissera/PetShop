@@ -33,7 +33,7 @@ var cad = new Vue({
 						    	nome: self.name,
 								email: self.email,
 								login: self.login,
-						    	pass: self.pass
+						    	password: self.pass
 							})
 							.then(function (response) {
 						    	console.log(response);
