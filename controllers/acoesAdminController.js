@@ -27,11 +27,13 @@ const debug = exports.new = function (req, res) {
 
     admin.nome = req.body.nome;
     admin.login = req.body.login;
-    admin.password = req.body.password;
     admin.id = req.body.id;
+    admin.endereco = req.body.endereco;
     admin.telefone = req.body.telefone;
     admin.email = req.body.email;
     admin.perfil_path = req.body.perfil_path;
+
+    admin.setPassword(req.body.password);
 
     // salva o admin, check por errors
     admin.save(function (err, data) {
@@ -45,16 +47,35 @@ const debug = exports.new = function (req, res) {
     });
 };
 
-//Handle view admin info
-exports.view = function (req, res) {
-    Admin.find({ login: req.body.login }, function (err, admin) {
-        if (err)
-            res.send(err);
-        else res.json({
-            message: 'admin details loading..',
-            data: admin
-        });
-    });
+exports.view = async (req, res, next) => {
+    try{
+        const admin = await Admin.find({ login: req.body.login });
+        console.log("vc quis printar controller " + req.body.login);
+        res.status(200).json(admin);
+    } catch(err){
+        next(err);
+    }
+};
+
+exports.login = async (req, res, next) => {
+    try{
+        console.log("vc quis printar controller " + req.body.login);
+        await Admin.findOne({login: req.body.login})
+            .then( (admin) => {
+                console.log(admin);
+                console.log(req.body.password);
+                var val = false;
+                if (admin)
+                    val = admin.validatePassword(req.body.password);
+                console.log('validation finished');
+                res.json({
+                    admin: admin,
+                    val: val
+                });
+            }) 
+    } catch(err){
+        next(err);
+    }
 };
 
 /* Handle update admins info

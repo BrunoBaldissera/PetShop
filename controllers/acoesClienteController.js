@@ -80,7 +80,9 @@ exports.login = async (req, res, next) => {
             .then( (client) => {
                 console.log(client);
                 console.log(req.body.password);
-                var val = client.validatePassword(req.body.password);
+                var val = false;
+                if (client)
+                    val = client.validatePassword(req.body.password);
                 console.log('validation finished');
                 res.json({
                     client: client,

@@ -19,6 +19,9 @@ router.get('/', function (req, res) {
         .get(acoesAdminController.index)
         .post(acoesAdminController.new);
 
+    router.route('/admins/login')
+        .post(acoesAdminController.login)
+
     router.route('/admins/:admin_id')
         .get(acoesAdminController.view);
         //.patch(acoesAdminController.update)
