@@ -42,10 +42,10 @@
                   <input class="form-control py-2 border-right-0 border" type="search" placeholder="Buscar no site">
                 </div>
               </li>
-              <li class="nav-item ml-3"><a class="nav-link" href="#">Serviços</a></li>
-              <li class="nav-item ml-3"><a class="nav-link" href="#">Produtos</a></li>
-              <li class="nav-item ml-3"><a class="nav-link" href="#">Calendário</a></li>
-              <li class="nav-item ml-3"><a class="nav-link" href="#">Conta</a></li>
+              <li class="nav-item ml-3"><a class="nav-link" href="./html/lista_servicos.html">Serviços</a></li>
+              <li class="nav-item ml-3"><a class="nav-link" href="./html/lista_produtos.html">Produtos</a></li>
+              <li class="nav-item ml-3"><a class="nav-link" href="./html/calendar.html">Calendário</a></li>
+              <li class="nav-item ml-3"><a class="nav-link" href="./html/dados_cliente.html">Conta</a></li>
             </ul>
           </div>  
       </div>
@@ -145,7 +145,8 @@
 
           <div>
             <h5 v-if="showAlert_c" class="ml-5">Login inválido! Tente novamente</h5>
-            <h5 v-if="dis_btn_c == 1" class="ml-5">Login bem-sucedido! Bem-vindo(a) {{ name_cli }} !</h5>
+            <h5 v-if="log_ok" class="ml-5">Login bem-sucedido! Bem-vindo(a) {{ name_cli }} !</h5>
+            <h5 v-if="pw_inc" class="ml-5">Senha incorreta. Tente novamente</h5>
           </div>
 
         </div>
@@ -241,7 +242,7 @@
         Temos produtos incríveis sério olha quanta coisa nossa muitos produtos muita coisa nossa Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, soluta illum ad autem suscipit ipsa totam rerum. Corporis eum doloribus a, dignissimos corrupti quas consequatur natus eius optio iusto at?
       </p>
 
-      <a href="linkproducts" id="products-link" alt="link para produtos">Conheça nossos produtos!</a>
+      <a href="./html/lista_produtos.html" id="products-link" alt="link para produtos">Conheça nossos produtos!</a>
     </div>
 
     <!--DIV DE SERVIÇOS-->
@@ -260,7 +261,7 @@
         Temos serviços incríveis sério olha quanta coisa nossa muitos serviços muita coisa nossa Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, soluta illum ad autem suscipit ipsa totam rerum. Corporis eum doloribus a, dignissimos corrupti quas consequatur natus eius optio iusto at?
       </p>
 
-      <a href="linkservices" id="services-link" alt="link para serviços" class="float-right">Conheça nossos serviços!</a>
+      <a href="./html/lista_servicos" id="services-link" alt="link para serviços" class="float-right">Conheça nossos serviços!</a>
     </div>
     <hr>
 
@@ -268,8 +269,8 @@
     <div class="footer-copyright text-center container-fluid py-3 color2">
       <div class="row" id="footerrow">
         <div class="col-sm mt-1">© PetShop</div>
-        <div class="col-sm"><a href="#"><i class="fab fa-instagram fa-2x"></i></a></div>
-        <div class="col-sm"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></div>
+        <div class="col-sm"><a href="https://www.instagram.com/joerogan/?hl=pt-br"><i class="fab fa-instagram fa-2x"></i></a></div>
+        <div class="col-sm"><a href="https://www.facebook.com/JOEROGAN/"><i class="fab fa-facebook fa-2x"></i></a></div>
       </div>
     </div>
 

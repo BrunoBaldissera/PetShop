@@ -14,7 +14,7 @@ var cad = new Vue({
 			var self = this;
 
 			//ENTENDER O :client
-			axios.get('/api/clients/search', {
+			axios.post('/api/clients/search', {
 					login: self.login
 				})
 			  	.then( (response) => {
@@ -24,9 +24,9 @@ var cad = new Vue({
 				    console.log("name (get): " + self.name) 
 					console.log("email (get): " + self.email)
 
-					console.log(Object.keys(response.data.data).length);
+					console.log(response.data.length);
 
-				    if (Object.keys(response.data.data).length == 0){
+				    if (response.data.length == 0){
 				    	if (self.email != "" && self.name != ""){
 				    		console.log("cadastro vai ser feito")
 				    		axios.post('/api/clients', {

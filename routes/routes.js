@@ -33,7 +33,7 @@ router.get('/', function (req, res) {
         .post(acoesClienteController.new);
 
     router.route('/clients/search')
-        .get(acoesClienteController.view);
+        .post(acoesClienteController.view);
 
     router.route('/clients/:client_id')
         //.get(acoesClienteController.view);
