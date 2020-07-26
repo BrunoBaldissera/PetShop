@@ -5,6 +5,10 @@ var cad = new Vue({
 		login: "",
 		email : "",
 		pass : "",
+
+		endereco: "",
+		telefone: "",
+
 		dis_btn : 0,
 		showAlert: false
 	},
@@ -33,7 +37,9 @@ var cad = new Vue({
 						    	nome: self.name,
 								email: self.email,
 								login: self.login,
-						    	password: self.pass
+								password: self.pass,
+								endereco: self.endereco,
+								telefone: self.telefone
 							})
 							.then(function (response) {
 						    	console.log(response);
