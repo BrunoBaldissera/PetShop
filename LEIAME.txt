@@ -5,6 +5,7 @@ npm install mongoose --save
 npm install body-parser --save
 npm install axios
 npm install vue bootstrap-vue bootstrap
+npm install permit --save
 
 express
 npm install express --save
