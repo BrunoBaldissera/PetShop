@@ -13,32 +13,25 @@ var log = new Vue({
 	methods: {
 		login: function(){
 			var self = this;
-			var client = {
-				login: self.login_c,
-				password: self.pass_c
-			};
-			axios.post('/api/login', {
-					client
+			axios.post('/api/clients/login', {
+					login: self.login_c,	
+					password: self.pass_c
 				})
 			  	.then( (response) => {
-				    console.log(response.data);
+				    console.log(response.data) ;
 				    console.log(response.status);
-				    /*console.log("login (get): " + self.login_c);
+				    console.log("login (get): " + self.login_c);
 					console.log("pass (get): " + self.pass_c);
 
-					console.log("novo " + response.data.length);
-
-				    if (response.data.length != 0){
-				    	console.log(response.data.length);
-						console.log(response.data[0].login);	
-						console.log(response.data[0].password);
+				    if (response.data == null){
+						console.log(response.data.login);
 
 				    	console.log(self.pass_c)
-				    	if (self.pass_c.localeCompare(response.data[0].password) == 0){
+				    	if (response.val == true){
 				    		console.log("login aceito!");
 				    		self.pw_inc = false;
 				    		self.log_ok = true;
-				    		self.name_cli = response.data[0].nome;
+				    		self.name_cli = response.data.nome;
 				    		self.dis_btn_c = 1;
 				    	}
 				    	else
@@ -48,7 +41,7 @@ var log = new Vue({
 				    	self.showAlert_c = true;
 				    	console.log("login incorreto");
 				    	console.log("showAlert (get): " + self.showAlert_c.toString());
-				    }*/
+				    }
 				}) .catch( (err) => console.log(err) );
 		}
 	}

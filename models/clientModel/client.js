@@ -53,10 +53,10 @@ var clientSchema = new mongoose.Schema({
         required: false,
     },
 
-    /*token: {
+    token: {
         type: String,
         required: false,
-    },*/
+    },
 
     array_pets: [{
         type: String
@@ -70,6 +70,7 @@ clientSchema.methods.setPassword = function(password) {
 };
 
 clientSchema.methods.validatePassword = function(password) {
+  console.log("validating password");
   const hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');
   return this.hash === hash;
 };

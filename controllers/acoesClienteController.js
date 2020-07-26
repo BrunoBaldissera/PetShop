@@ -26,7 +26,6 @@ const debug = exports.new = function (req, res) {
     let client = new Client();
 
     client.login = req.body.login;
-    client.password = req.body.password;
     client.nome = req.body.nome;
     client.id = req.body.id;
     client.endereco = req.body.endereco;
@@ -34,14 +33,16 @@ const debug = exports.new = function (req, res) {
     client.email = req.body.email;
     client.perfil_path = req.body.perfil_path;
     client.array_pets = req.body.array_pets;
-    client.token = req.body.token;
+
+    client.setPassword(req.body.password);
 
     // salva o cliente, check por errors
     client.save(function (err, data) {
         if (err)
             res.json(err);
         console.log(data)
-    res.json({
+        
+        res.json({
             message: 'New client created!',
             data: client
         });
@@ -65,13 +66,29 @@ const debug = exports.new = function (req, res) {
 exports.view = async (req, res, next) => {
     try{
         const client = await Client.find({ login: req.body.login });
-
         console.log("vc quis printar controller " + req.body.login);
-
         res.status(200).json(client);
     } catch(err){
         next(err);
-    }s
+    }
+};
+
+exports.login = async (req, res, next) => {
+    try{
+        console.log("vc quis printar controller " + req.body.login);
+        Client.findOne({login: req.body.login})
+            .then( (client) => {
+                console.log(client);
+                console.log(req.body.password);
+                var val = client.validatePassword(req.body.password);
+                res.json({
+                    data: client,
+                    val: val
+                });
+            }) 
+    } catch(err){
+        next(err);
+    }
 };
 
 /*exports.view: async (req, res, next) => {
@@ -126,7 +143,6 @@ exports.update = function (req, res) {
     Client.findById(req.params.client_id, function (err, client) {
         if (err)
             res.send(err);
-
         client.login = req.body.login;
         client.password = req.body.password;
         client.nome = req.body.nome;
@@ -137,7 +153,6 @@ exports.update = function (req, res) {
         client.perfil_path = req.body.perfil_path;
         client.array_pets = req.body.array_pet;
             
-
 // save the client and check for errors
         Client.save(function (err) {
             if (err)
