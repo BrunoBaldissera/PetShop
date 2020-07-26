@@ -55,7 +55,7 @@ router.post('/login', auth.optional, (req, res, next) => {
     console.log("login required");
     return res.status(422).json({
       errors: {
-        email: 'is required',
+        login: 'is required',
       },
     });
   }
@@ -69,16 +69,16 @@ router.post('/login', auth.optional, (req, res, next) => {
     });
   }
 
-   passport.authenticate('local', function(err, client, info) {
+   /*passport.authenticate('local', function(err, client, info) {
     if (err) { return next(err); }
     if (!client) { return res.redirect('/login'); }
     //req.logIn(user, function(err) {
     //  if (err) { return next(err); }
     //  return res.redirect('/users/' + user.username);
     //});
-  })(req, res, next);
+  })(req, res, next);*/
 
-  /* return passport.authenticate('local', { session: false }, (err, passportClient, info) => {
+   return passport.authenticate('local', { session: false }, (err, passportClient, info) => {
     if(err) {
       return next(err);
     }
@@ -91,7 +91,7 @@ router.post('/login', auth.optional, (req, res, next) => {
     }
     console.log("chegou ate o final");
     return status(400).info;
-  })(req, res, next);*/
+  })(req, res, next);
 });
 
 //GET current route (required, only authenticated users have access)
