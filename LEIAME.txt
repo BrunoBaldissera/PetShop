@@ -6,9 +6,8 @@ npm install body-parser --save
 npm install axios
 npm install vue bootstrap-vue bootstrap
 npm install permit --save
-
-express
 npm install express --save
+npm install crypto
 
 
 Petshop Mockup
@@ -46,8 +45,3 @@ template - Template para criação de novas páginas com navbar e footer
 app.css: CSS com configurações de aparência básicas para todas as páginas
 
 =====
-
-Pastas:
-
-images - imagens usadas como placeholders nas páginas
-styles - grupo de todas as pastas que contem css para cada html
