@@ -60,6 +60,11 @@ var clientSchema = new mongoose.Schema({
 
     array_pets: [{
         type: String
+    }],
+
+    array_cart: [{
+        id: String,
+        required: false
     }]
 
 });

@@ -21,6 +21,43 @@ exports.index = function (req, res) {
     });
 };
 
+//Adiciona ao carrinho
+exports.add_to_cart = function (req, res) {
+    Client.findOne({ email: req.body.email }, function (err, client) {
+        if (err) {
+            res.json({
+                status: "error",
+                ok: false,
+                message: err,
+            });
+        }
+        else if (!client){
+            res.json({
+                status: "error",
+                ok: false,
+                message: "usuario nao existe",
+            });
+        }
+        else {
+            client.array_cart.push(req.body.product);
+            client.save(function (err, data) {
+                if (err) {
+                    res.json(err);
+                    ok: false
+                }
+                
+                else {
+                    res.json({
+                        message: 'Item adicionado ao carrinho!',
+                        ok: true
+                    });
+                }
+            });
+        }
+        console.log(client);
+    })
+}
+
 //Cria novos clientes
 const debug = exports.new = function (req, res) {
     let client = new Client();

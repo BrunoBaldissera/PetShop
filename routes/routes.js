@@ -32,7 +32,6 @@ router.get('/', function (req, res) {
         //.delete(acoesAdminController.delete)
 
 //CLIENTE
-
     var acoesClienteController = require('../controllers/acoesClienteController.js')
     router.route('/clients')
         .get(acoesClienteController.index)
@@ -41,6 +40,9 @@ router.get('/', function (req, res) {
     router.route('/clients/search')
         .post(acoesClienteController.view);
 
+    router.route('/clients/add_product')
+        .post(acoesClienteController.add_to_cart);
+
     router.route('/clients/login')
         .post(acoesClienteController.login);
 
@@ -48,8 +50,7 @@ router.get('/', function (req, res) {
         //.get(acoesClienteController.view);
         //.patch(acoesClientController.update)
         //.put(acoesClientController.update)
-        //.delete(acoesClientController.delete)
+        //.delete(acoesClientController.delete)  
 
-    
 // exportamos as rotas da api
 module.exports = router;

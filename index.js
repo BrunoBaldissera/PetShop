@@ -6,6 +6,7 @@ let bodyParser = require('body-parser');
 
 var Admin = require("./models/adminModel/admin");
 var Client = require("./models/clientModel/client");
+var Product = require("./models/productModel/product");
 
 // Configura o body-parser para lidar rquisições de post
 app.use(bodyParser.urlencoded({

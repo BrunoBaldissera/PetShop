@@ -25,7 +25,6 @@
 </head>
 
 <body class="color5">
-
   <!-- NavBar -->
   <nav id="navbar" class="navbar navbar-dark navbar-expand-md sticky-top">
     <div class="container-fluid color1">
@@ -63,9 +62,8 @@
   <hr>
 
   <main role="main">
-
     <div class="album py-5 bg-light">
-      <div class="container">
+      <div id="prods" class="container">
         <div class="row">
 
           <div class="col-sm col-xs-12">
@@ -83,56 +81,57 @@
                     <div class="row">
                       <div class="col-75" id="card3">
                         <div class="container" id="card1">
-                          <form action="/action_page.php">
-
+                          <form>
                             <div class="row">
                               <div class="col-50">
-                                <h3>Billing Address</h3>
-                                <label for="fname">Nome</label>
+                                <h3>Dados para Cobrança</h3>
+                                <label>Nome</label>
                                 <input type="text" id="fname" name="firstname" placeholder="Miquéias Pinheiro">
-                                <label for="email"> Email</label>
-                                <input type="text" id="email" name="email" placeholder="miqueias@pinheiro.com">
-                                <label for="adr"> Address</label>
+                                <label> Email</label>
+                                <input type="text" v-model="email_in" id="email" name="email" placeholder="miqueias@pinheiro.com">
+                                <label> Endereço</label>
                                 <input type="text" id="adr" name="address" placeholder="Jazz St.">
 
 
                                 <div class="row">
                                   <div class="col-50">
-                                    <label for="state">State</label>
+                                    <label>Estado</label>
                                     <input type="text" id="state" name="state" placeholder="AM">
                                   </div>
                                   <div class="col-50">
-                                    <label for="CEP">Zip</label>
+                                    <label>CEP</label>
                                     <input type="text" id="zip" name="zip" placeholder="10001">
                                   </div>
                                 </div>
                               </div>
 
                               <div class="col-50">
-                                <h3>Payment</h3>
+                                <h3>Pagamento</h3>
 
-                                <label for="ccnum">Número do cartão</label>
+                                <label>Número do cartão</label>
                                 <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                                <label for="expmonth">Expiração</label>
+                                <label>Expiração</label>
                                 <input type="text" id="expmonth" name="expmonth" placeholder="Setembro">
 
                                 <div class="row">
                                   <div class="col-50">
-                                    <label for="expyear">Exp Year</label>
+                                    <label>Ano de expiração</label>
                                     <input type="text" id="expyear" name="expyear" placeholder="2018">
                                   </div>
                                   <div class="col-50">
-                                    <label for="cvv">CVV</label>
+                                    <label>CVV</label>
                                     <input type="text" id="cvv" name="cvv" placeholder="352">
                                   </div>
                                 </div>
                               </div>
 
                             </div>
-
-                            <input type="submit" value="Continue to checkout" class="btn">
+                            <div>
+                              <button class="ml-5 btn btn-primary btn-lg" v-on:click="add_to_cart">Adicionar</button>
+                              <h5 v-if="showOk">Produto adicionado ao seu carrinho!</h5>
+                              <h5 v-if="showErr">Tente novamente depois.</h5>
+                            </div>
                           </form>
-
                         </div>
                       </div>
 
@@ -144,12 +143,9 @@
                               <b>4</b>
                             </span>
                           </h4>
-                          <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-                          <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-                          <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-                          <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+                          <p><a href="#">Bola</a> <span class="price">$5</span></p>
                           <hr>
-                          <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+                          <p>Total <span class="price" style="color:black"><b>$5</b></span></p>
                         </div>
                       </div>
                     </div>
@@ -214,12 +210,8 @@
               </div>
             </div>
           </div>
-
-
         </div>
-
       </div>
-
 
       <!-- Footer -->
       <div class="footer-copyright text-center container-fluid py-3 color2">
@@ -229,18 +221,18 @@
           <div class="col-sm"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></div>
         </div>
       </div>
+    </div>
+  </main>
+
+      <script src="../scripts/vue.js"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="../scripts/dados_produto.js"></script>
 
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
 </html>
